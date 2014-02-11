@@ -57,6 +57,45 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
+(unless package-archive-contents
+  (package-refresh-contents))
+
+(defun packages-install (packages)
+  (dolist (p packages)
+    (when (not (package-installed-p p))
+      (package-install p)))
+  (delete-other-windows))
+
+(packages-install
+ '(ac-nrepl
+   ac-slime
+   ag
+   auto-complete
+   auto-complete-clang-async
+   cider
+   clojure-mode
+   clojure-test-mode
+   coffee-mode
+   ensime
+   epc
+   evil
+   find-file-in-repository
+   geiser
+   ggtags
+   haskell-mode
+   helm
+   jedi
+   less-css-mode
+   magit
+   nginx-mode
+   paredit
+   rainbow-delimiters
+   slime
+   solarized-theme
+   tagedit
+   web-mode
+   wrap-region))
+
 ;; Color scheme
 (load-theme 'solarized-dark t)
 
