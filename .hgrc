@@ -1,0 +1,12 @@
+[ui]
+username = Aku Kotkavuo <aku.kotkavuo@gmail.com>
+
+[extensions]
+color =
+histedit =
+mq =
+rebase =
+record =
+
+[diff]
+git=true
