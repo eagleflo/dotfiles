@@ -29,8 +29,7 @@ set noswapfile
 
 set encoding=utf-8
 
-call pathogen#runtime_append_all_bundles()
-call pathogen#infect()
+execute pathogen#infect()
 
 syntax enable
 set background=dark
