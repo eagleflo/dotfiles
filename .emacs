@@ -79,6 +79,7 @@
    ensime
    epc
    evil
+   expand-region
    find-file-in-repository
    geiser
    ggtags
@@ -124,8 +125,8 @@
 ;; Evil
 ;(evil-mode)
 
-;; Wrap Region
-(require 'wrap-region)
+(global-set-key (kbd "M-[") 'er/contract-region)
+(global-set-key (kbd "M-]") 'er/expand-region)
 
 ;; IDO
 (require 'ido)
