@@ -76,6 +76,7 @@
    clojure-mode
    clojure-test-mode
    coffee-mode
+   dash-at-point
    ensime
    epc
    evil
