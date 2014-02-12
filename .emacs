@@ -102,7 +102,7 @@
 (load-theme 'solarized-dark t)
 
 ;; Find File in Project
-(global-set-key (kbd "C-x f") 'find-file-in-repository)
+;(global-set-key (kbd "C-x f") 'find-file-in-repository)
 
 ;; Rainbows!
 (require 'rainbow-delimiters)
