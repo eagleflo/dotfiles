@@ -130,8 +130,7 @@
 (global-set-key (kbd "M-]") 'er/expand-region)
 
 ;; IDO
-(require 'ido)
-(ido-mode t)
+;(ido-mode t)
 
 ;; Helm
 (require 'helm-config)
