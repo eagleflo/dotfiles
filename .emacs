@@ -269,3 +269,8 @@
   (let ((path (shell-command-to-string "$SHELL -cl \"printf %s \\\"\\\$PATH\\\"\"")))
        (setenv "PATH" path)
        (setq exec-path (split-string path ":"))))
+
+;; Japanese
+(set-fontset-font "fontset-default"
+                  'japanese-jisx0208
+                  '("Hiragino Kaku Gothic Pro" . "iso10646-1"))
