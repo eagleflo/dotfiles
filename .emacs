@@ -40,6 +40,9 @@
 ;; No audible or visible bell
 (setq ring-bell-function 'ignore)
 
+;; No blinking cursor
+(blink-cursor-mode 0)
+
 ;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
