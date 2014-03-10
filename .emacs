@@ -193,7 +193,7 @@
 (slime-setup '(slime-fancy))
 
 ;; Racket
-(setq geiser-racket-binary "/Applications/Racket v5.3.6/bin/racket")
+(setq geiser-racket-binary "/Applications/Racket v5.93/bin/racket")
 
 ;; Python
 (autoload 'jedi:setup "jedi" nil t)
