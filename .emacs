@@ -46,6 +46,8 @@
 ;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
 (defalias 'yes-or-no-p 'y-or-n-p)
 
+(global-set-key (kbd "M-j") 'join-line)
+
 ;; Show full pathname
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
