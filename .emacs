@@ -1,8 +1,7 @@
 ;; Turn off menubar, toolbar & scrollbar
-(menu-bar-mode -1)
-(if window-system
-  (progn (tool-bar-mode -1)
-         (scroll-bar-mode -1)))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
 
 ;; No splash screen
 (setq inhibit-splash-screen t)
