@@ -54,6 +54,8 @@
                    (abbreviate-file-name (buffer-file-name))
                  "%b"))))
 
+;; Follow symbolic links to version controlled files... Helm find-file
+;; seems to want this ever since I dropped .emacs under Git.
 (setq-default vc-follow-symlinks t)
 
 ;; Packaging
