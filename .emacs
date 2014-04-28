@@ -138,9 +138,22 @@
 ;; IDO
 ;(ido-mode t)
 
+;; Use mdfind for locate on OS X
+(setq locate-command "mdfind")
+
+;; Require Common Lisp for Emacs for case
+(require 'cl)
+
 ;; Helm
 (require 'helm-config)
 (global-set-key (kbd "C-c h") 'helm-mini)
+(setq helm-c-locate-command
+      (case system-type
+        ('gnu/linux "locate -i -r %s")
+        ('berkeley-unix "locate -i %s")
+        ('windows-nt "es %s")
+        ('darwin "mdfind -name %s %s")
+        (t "locate %s")))
 (helm-mode 1)
 
 ;; ClojureScript
