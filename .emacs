@@ -101,6 +101,8 @@
    slime
    solarized-theme
    tagedit
+   tern
+   tern-auto-complete
    web-mode
    wrap-region))
 
@@ -217,6 +219,12 @@
 ;; ENSIME
 (require 'ensime)
 (add-hook 'scala-mode-hook 'ensime-scala-mode-hook)
+
+;; Tern
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
 
 ;; Unicode
 ;(unicode-fonts-setup)
