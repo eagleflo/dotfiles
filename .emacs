@@ -105,7 +105,7 @@
    wrap-region))
 
 ;; Color scheme
-(load-theme 'solarized-dark t)
+(load-theme 'solarized-light t)
 
 ;; Find File in Project
 ;(global-set-key (kbd "C-x f") 'find-file-in-repository)
