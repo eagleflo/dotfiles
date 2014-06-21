@@ -80,7 +80,6 @@
    auto-complete-clang-async
    cider
    clojure-mode
-   clojure-test-mode
    coffee-mode
    dash-at-point
    ensime
