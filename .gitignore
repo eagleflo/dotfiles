@@ -2,4 +2,5 @@
 *.py[cod]
 *.mode1v3
 *.pbxuser
+.emacs.d
 .lein/self-installs
