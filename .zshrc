@@ -61,7 +61,7 @@ if [[ $OSTYPE == darwin* ]]; then
     export PATH=$PATH:~/go/bin
 fi
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-export PATH=$PATH::~/src/depot_tools
+export PATH=$PATH:~/src/depot_tools
 
 if [[ $OSTYPE == linux* ]]; then
     eval `dircolors ~/.dir_colors`
