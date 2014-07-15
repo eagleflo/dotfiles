@@ -97,6 +97,7 @@
    nginx-mode
    paredit
    rainbow-delimiters
+   rust-mode
    slime
    solarized-theme
    tagedit
