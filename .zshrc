@@ -52,14 +52,15 @@ export LC_CTYPE=en_US.UTF-8
 export LESSCHARSET='utf-8'
 
 # Path
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin:~/.cabal/bin
+export PATH=~/bin:/usr/local/bin:/usr/local/sbin
 if [[ $OSTYPE == darwin* ]]; then
     export PATH=$PATH:/usr/local/share/npm/bin
     export PATH=$PATH:/usr/local/opt/ruby/bin
-    export PATH=$PATH:/usr/local/texlive/2013/bin/x86_64-darwin
+    export PATH=$PATH:/usr/texbin
     export PATH=$PATH:"/Applications/Racket v6.0.1/bin"
     export PATH=$PATH:~/go/bin
 fi
+export PATH=$PATH:~/.cabal/bin
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 export PATH=$PATH:~/src/depot_tools
 
@@ -88,6 +89,12 @@ if [[ $OSTYPE == darwin* ]]; then
     export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem | /usr/bin/head -1)"
     export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
     export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
+fi
+
+# Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
+export GHC_DOT_APP="/opt/homebrew-cask/Caskroom/ghc/7.8.3-r0/ghc-7.8.3.app"
+if [ -d "$GHC_DOT_APP" ]; then
+    export PATH="${PATH}:${GHC_DOT_APP}/Contents/bin"
 fi
 
 # OCaml & OPAM
