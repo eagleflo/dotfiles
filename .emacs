@@ -73,7 +73,7 @@
   (delete-other-windows))
 
 (packages-install
- '(ac-nrepl
+ '(ac-cider
    ac-slime
    ag
    auto-complete
@@ -168,9 +168,9 @@
 ;; Clojure, CIDER & autocomplete
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 
-(require 'ac-nrepl)
-(add-hook 'cider-repl-mode-hook 'ac-nrepl-setup)
-(add-hook 'cider-interaction-mode-hook 'ac-nrepl-setup)
+(require 'ac-cider)
+(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+(add-hook 'cider-interaction-mode-hook 'ac-cider-setup)
 (eval-after-load "auto-complete" '(add-to-list 'ac-modes 'cider-repl-mode))
 (add-hook 'cider-interaction-mode-hook 'cider-turn-on-eldoc-mode)
 (add-to-list 'same-window-buffer-names "*cider*")
