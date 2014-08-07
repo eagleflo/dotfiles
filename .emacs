@@ -166,13 +166,15 @@
 (ac-config-default)
 
 ;; Clojure, CIDER & autocomplete
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-
 (require 'ac-cider)
+(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+(add-hook 'cider-mode-hook 'ac-cider-setup)
 (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-(add-hook 'cider-interaction-mode-hook 'ac-cider-setup)
-(eval-after-load "auto-complete" '(add-to-list 'ac-modes 'cider-repl-mode))
+(eval-after-load "auto-complete" '(add-to-list 'ac-modes 'cider-mode))
+
+(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-interaction-mode-hook 'cider-turn-on-eldoc-mode)
+
 (add-to-list 'same-window-buffer-names "*cider*")
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
@@ -183,11 +185,8 @@
   (setq completion-at-point-functions '(auto-complete)))
 (add-hook 'auto-complete-mode-hook
           'set-auto-complete-as-completion-at-point-function)
-(add-hook 'cider-repl-mode-hook
+(add-hook 'cider-mode-hook
           'set-auto-complete-as-completion-at-point-function)
-(add-hook 'cider-interaction-mode-hook
-          'set-auto-complete-as-completion-at-point-function)
-
 
 ;; Clang Complete
 (require 'auto-complete-clang-async)
