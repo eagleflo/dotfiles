@@ -171,6 +171,7 @@
 (add-hook 'cider-mode-hook 'ac-cider-setup)
 (add-hook 'cider-repl-mode-hook 'ac-cider-setup)
 (eval-after-load "auto-complete" '(add-to-list 'ac-modes 'cider-mode))
+(eval-after-load "auto-complete" '(add-to-list 'ac-modes 'cider-repl-mode))
 
 (add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
 (add-hook 'cider-interaction-mode-hook 'cider-turn-on-eldoc-mode)
