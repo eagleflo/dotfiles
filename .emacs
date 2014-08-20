@@ -37,6 +37,9 @@
 ;; Show trailing whitespace
 (setq-default show-trailing-whitespace t)
 
+;; Highlight tabs
+(setq-default highlight-tabs t)
+
 ;; We are civilized people here
 (setq sentence-end-double-space nil)
 
