@@ -34,6 +34,9 @@
 ;; Require newlines at the end of file
 (setq require-final-newline t)
 
+;; Show trailing whitespace
+(setq-default show-trailing-whitespace t)
+
 ;; We are civilized people here
 (setq sentence-end-double-space nil)
 
