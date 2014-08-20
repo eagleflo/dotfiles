@@ -1,3 +1,7 @@
+;; Identity
+(setq user-full-name "Aku Kotkavuo"
+      user-mail-address "aku.kotkavuo@gmail.com")
+
 ;; Turn off menubar, toolbar & scrollbar
 (if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
 (if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
