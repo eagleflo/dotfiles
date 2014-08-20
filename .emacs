@@ -10,6 +10,7 @@
 (global-auto-revert-mode)
 
 ;; Disable backups & autosave
+(setq make-backup-files nil)
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 
