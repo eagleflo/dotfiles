@@ -120,9 +120,6 @@
 ;; Color scheme
 (load-theme 'solarized-light t)
 
-;; Find File in Project
-;(global-set-key (kbd "C-x f") 'find-file-in-repository)
-
 ;; Rainbows!
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
@@ -142,13 +139,7 @@
      (tagedit-add-experimental-features)
      (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
 
-;; Evil
-;(evil-mode)
-
 (global-set-key (kbd "C-=") 'er/expand-region)
-
-;; IDO
-;(ido-mode t)
 
 ;; Use mdfind for locate on OS X
 (setq locate-command "mdfind")
@@ -238,9 +229,6 @@
       (require 'tern-auto-complete)
       (tern-ac-setup)))
 
-;; Unicode
-;(unicode-fonts-setup)
-
 ;; Whitespace
 (require 'whitespace)
 
@@ -307,3 +295,15 @@
 (set-fontset-font "fontset-default"
                   'japanese-jisx0208
                   '("Hiragino Kaku Gothic Pro" . "iso10646-1"))
+
+;; Unicode
+;(unicode-fonts-setup)
+
+;; Find File in Project
+;(global-set-key (kbd "C-x f") 'find-file-in-repository)
+
+;; IDO
+;(ido-mode t)
+
+;; Evil
+;(evil-mode)
