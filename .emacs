@@ -2,13 +2,33 @@
 (setq user-full-name "Aku Kotkavuo"
       user-mail-address "aku.kotkavuo@gmail.com")
 
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Part 1 - Fixing bad defaults ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
 ;; Turn off menubar, toolbar & scrollbar
-(if (fboundp 'menu-bar-mode) (menu-bar-mode -1))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode -1))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode -1))
+(if (fboundp 'menu-bar-mode) (menu-bar-mode 0))
+(if (fboundp 'tool-bar-mode) (tool-bar-mode 0))
+(if (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
 
 ;; No splash screen
 (setq inhibit-splash-screen t)
+
+;; No audible or visible bell
+(setq ring-bell-function 'ignore)
+
+;; Show column number in mode line
+(column-number-mode)
+
+;; Show file size in mode
+(size-indication-mode)
+
+;; Highlight matching parenthesis
+(show-paren-mode)
+
+;; No blinking cursor
+(blink-cursor-mode 0)
 
 ;; Read changes immediately from disk
 (global-auto-revert-mode)
@@ -18,23 +38,23 @@
 (setq backup-inhibited t)
 (setq auto-save-default nil)
 
-;; Show column number in mode line
-(setq column-number-mode t)
+;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
+(defalias 'yes-or-no-p 'y-or-n-p)
 
-;; Show file size in mode
-(size-indication-mode t)
 
-;; Highlight matching parenthesis
-(show-paren-mode 1)
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Part 2 - Indentation and whitespace preferences ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Spaces, not tabs. 2 spaces per tab.
 (setq-default indent-tabs-mode nil)
-(setq-default tab-width 2)
+(setq-default tab-width 4)
 (setq-default tab-stop-list (number-sequence 2 200 2))
 (setq-default js2-basic-offset 2)
 (setq-default js-indent-level 2)
 (setq-default css-indent-offset 2)
-(setq coffee-tab-width 2)
+(setq-default coffee-tab-width 2)
+(setq-default py-indent-offset 4)
 
 ;; Require newlines at the end of file
 (setq require-final-newline t)
@@ -48,28 +68,11 @@
 ;; We are civilized people here
 (setq sentence-end-double-space nil)
 
-;; No audible or visible bell
-(setq ring-bell-function 'ignore)
 
-;; No blinking cursor
-(blink-cursor-mode 0)
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;; Part 3 - Packaging ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Always ask for y/n keypress instead of typing out 'yes' or 'no'
-(defalias 'yes-or-no-p 'y-or-n-p)
-
-(global-set-key (kbd "M-j") 'join-line)
-
-;; Show full pathname
-(setq frame-title-format
-      '((:eval (if (buffer-file-name)
-                   (abbreviate-file-name (buffer-file-name))
-                 "%b"))))
-
-;; Follow symbolic links to version controlled files... Helm find-file
-;; seems to want this ever since I dropped .emacs under Git.
-(setq-default vc-follow-symlinks t)
-
-;; Packaging
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
@@ -84,8 +87,7 @@
   (delete-other-windows))
 
 (packages-install
- '(ac-cider
-   ac-slime
+ '(ac-slime
    ag
    auto-complete
    auto-complete-clang-async
@@ -97,10 +99,12 @@
    evil
    expand-region
    find-file-in-repository
+   flx-ido
    geiser
    ggtags
    haskell-mode
    helm
+   helm-ag
    helm-gtags
    jedi
    less-css-mode
@@ -118,7 +122,10 @@
    wrap-region))
 
 ;; Color scheme
-(load-theme 'solarized-light t)
+(if (window-system)
+    (load-theme 'solarized-light t)
+    (load-theme 'solarized-dark t))
+(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
 
 ;; Rainbows!
 (require 'rainbow-delimiters)
@@ -131,18 +138,26 @@
 (add-hook 'scheme-mode-hook           'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          'enable-paredit-mode)
 
-;; tagedit
-(eval-after-load "sgml-mode"
-  '(progn
-     (require 'tagedit)
-     (tagedit-add-paredit-like-keybindings)
-     (tagedit-add-experimental-features)
-     (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
+;; Clojure
+(add-hook 'cider-repl-mode-hook 'subword-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
-(global-set-key (kbd "C-=") 'er/expand-region)
+;; ClojureScript
+(setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
+
+;; Company
+(add-hook 'after-init-hook 'global-company-mode)
+(add-to-list 'company-backends 'company-c-headers)
+
+;; Autocomplete
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/emacs.d/dict")
+(ac-config-default)
 
 ;; Use mdfind for locate on OS X
-(setq locate-command "mdfind")
+(if (eq system-type 'darwin)
+    (setq locate-command "mdfind"))
 
 ;; Require Common Lisp for Emacs for case
 (require 'cl)
@@ -158,38 +173,6 @@
         ('darwin "mdfind -name %s %s")
         (t "locate %s")))
 (helm-mode 1)
-
-;; ClojureScript
-(setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
-
-;; Autocomplete
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/emacs.d/dict")
-(ac-config-default)
-
-;; Clojure, CIDER & autocomplete
-(require 'ac-cider)
-(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
-(add-hook 'cider-mode-hook 'ac-cider-setup)
-(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-(eval-after-load "auto-complete" '(add-to-list 'ac-modes 'cider-mode))
-(eval-after-load "auto-complete" '(add-to-list 'ac-modes 'cider-repl-mode))
-
-(add-hook 'cider-mode-hook 'cider-turn-on-eldoc-mode)
-(add-hook 'cider-interaction-mode-hook 'cider-turn-on-eldoc-mode)
-
-(add-to-list 'same-window-buffer-names "*cider*")
-(add-hook 'cider-repl-mode-hook 'subword-mode)
-(add-hook 'cider-repl-mode-hook 'paredit-mode)
-(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
-
-;; Completion at point function
-(defun set-auto-complete-as-completion-at-point-function ()
-  (setq completion-at-point-functions '(auto-complete)))
-(add-hook 'auto-complete-mode-hook
-          'set-auto-complete-as-completion-at-point-function)
-(add-hook 'cider-mode-hook
-          'set-auto-complete-as-completion-at-point-function)
 
 ;; helm-gtags
 (custom-set-variables
@@ -221,7 +204,7 @@
 
 (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
 (add-hook 'auto-complete-mode-hook 'ac-common-setup)
-(global-auto-complete-mode t)
+(global-auto-complete-mode)
 
 ;; SBCL
 (setq inferior-lisp-program "sbcl")
@@ -231,13 +214,22 @@
 (slime-setup '(slime-fancy))
 
 ;; Racket
-(setq geiser-racket-binary "/Applications/Racket v6.1/bin/racket")
+(if (eq system-type 'darwin)
+    (setq geiser-racket-binary "/Applications/Racket v6.1/bin/racket"))
 
 ;; Python
 (autoload 'jedi:setup "jedi" nil t)
 (add-hook 'python-mode-hook 'jedi:setup)
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
+
+;; tagedit
+(eval-after-load "sgml-mode"
+  '(progn
+     (require 'tagedit)
+     (tagedit-add-paredit-like-keybindings)
+     (tagedit-add-experimental-features)
+     (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
 
 ;; Tern
 (eval-after-load 'tern
@@ -248,8 +240,24 @@
 ;; Whitespace
 (require 'whitespace)
 
-;; Dash at point
-(global-set-key "\C-cd" 'dash-at-point)
+(global-set-key (kbd "C-=") 'er/expand-region)
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;; Part 4 - Miscellaneous ;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(global-set-key (kbd "M-j") 'join-line)
+
+;; Show full pathname in title bar
+(setq frame-title-format
+      '((:eval (if (buffer-file-name)
+                   (abbreviate-file-name (buffer-file-name))
+                 "%b"))))
+
+;; Follow symbolic links to version controlled files... Helm find-file
+;; seems to want this ever since I dropped .emacs under Git.
+(setq-default vc-follow-symlinks t)
 
 ;; Size, position and font in windowed mode
 (if (window-system)
@@ -311,15 +319,3 @@
 (set-fontset-font "fontset-default"
                   'japanese-jisx0208
                   '("Hiragino Kaku Gothic Pro" . "iso10646-1"))
-
-;; Unicode
-;(unicode-fonts-setup)
-
-;; Find File in Project
-;(global-set-key (kbd "C-x f") 'find-file-in-repository)
-
-;; IDO
-;(ido-mode t)
-
-;; Evil
-;(evil-mode)
