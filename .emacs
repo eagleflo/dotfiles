@@ -106,11 +106,13 @@
    helm
    helm-ag
    helm-gtags
+   helm-projectile
    jedi
    less-css-mode
    magit
    nginx-mode
    paredit
+   projectile
    rainbow-delimiters
    rust-mode
    slime
@@ -193,6 +195,10 @@
      (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
      (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
      (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)))
+
+;; Projectile
+(projectile-global-mode)
+(setq projectile-enable-caching t)
 
 ;; Clang Complete
 (require 'auto-complete-clang-async)
