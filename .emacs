@@ -106,6 +106,7 @@
    helm
    helm-ag
    helm-gtags
+   helm-ls-git
    helm-projectile
    jedi
    less-css-mode
@@ -167,6 +168,7 @@
 
 ;; Helm
 (require 'helm-config)
+(require 'helm-ls-git)
 (setq helm-c-locate-command
       (case system-type
         ('gnu/linux "locate -i -r %s")
