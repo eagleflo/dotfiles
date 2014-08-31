@@ -6,3 +6,6 @@
 .vim
 .lein/self-installs
 .ssh
+GPATH
+GRTAGS
+GTAGS
