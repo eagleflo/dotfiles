@@ -167,7 +167,6 @@
 
 ;; Helm
 (require 'helm-config)
-(global-set-key (kbd "C-c h") 'helm-mini)
 (setq helm-c-locate-command
       (case system-type
         ('gnu/linux "locate -i -r %s")
@@ -176,6 +175,10 @@
         ('darwin "mdfind -name %s %s")
         (t "locate %s")))
 (helm-mode 1)
+
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+(global-set-key (kbd "M-x") 'helm-M-x)
+(global-set-key (kbd "C-c h") 'helm-mini)
 
 ;; helm-gtags
 (custom-set-variables
