@@ -149,6 +149,7 @@
 (setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
 
 ;; Company
+(require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends 'company-c-headers)
 
