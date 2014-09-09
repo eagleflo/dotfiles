@@ -185,6 +185,8 @@
 (global-set-key (kbd "C-x C-d") 'helm-browse-project)
 (global-set-key (kbd "M-x")     'helm-M-x)
 (global-set-key (kbd "C-c h")   'helm-mini)
+(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
+(define-key helm-map (kbd "C-z")   'helm-select-action)
 
 ;; helm-gtags
 (custom-set-variables
