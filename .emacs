@@ -130,6 +130,9 @@
     (load-theme 'solarized-dark t))
 (custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
 
+;; Magit
+(global-set-key (kbd "C-x g") 'magit-status)
+
 ;; Rainbows!
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
