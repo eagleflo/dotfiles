@@ -157,11 +157,6 @@
 (add-hook 'after-init-hook 'global-company-mode)
 (add-to-list 'company-backends 'company-c-headers)
 
-;; Autocomplete
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/emacs.d/dict")
-(ac-config-default)
-
 ;; Use mdfind for locate on OS X
 (if (eq system-type 'darwin)
     (setq locate-command "mdfind"))
@@ -212,18 +207,6 @@
 (projectile-global-mode)
 (setq projectile-enable-caching t)
 
-;; Clang Complete
-(require 'auto-complete-clang-async)
-
-(defun ac-cc-mode-setup ()
-  (setq ac-clang-complete-executable "/usr/local/bin/clang-complete")
-  (setq ac-sources '(ac-source-clang-async))
-  (ac-clang-launch-completion-process))
-
-(add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
-(add-hook 'auto-complete-mode-hook 'ac-common-setup)
-(global-auto-complete-mode)
-
 ;; SBCL
 (setq inferior-lisp-program "sbcl")
 
@@ -249,17 +232,32 @@
      (tagedit-add-experimental-features)
      (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
 
-;; Tern
-(eval-after-load 'tern
-   '(progn
-      (require 'tern-auto-complete)
-      (tern-ac-setup)))
-
 ;; Whitespace
 (require 'whitespace)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+;; Autocomplete
+;; (require 'auto-complete-config)
+;; (add-to-list 'ac-dictionary-directories "~/emacs.d/dict")
+;; (ac-config-default)
+
+;; Clang Complete
+;; (require 'auto-complete-clang-async)
+;; (defun ac-cc-mode-setup ()
+;;   (setq ac-clang-complete-executable "/usr/local/bin/clang-complete")
+;;   (setq ac-sources '(ac-source-clang-async))
+;;   (ac-clang-launch-completion-process))
+
+;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+;; (add-hook 'auto-complete-mode-hook 'ac-common-setup)
+;; (global-auto-complete-mode)
+
+;; Tern
+;; (eval-after-load 'tern
+;;    '(progn
+;;       (require 'tern-auto-complete)
+;;       (tern-ac-setup)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Part 4 - Miscellaneous ;;
