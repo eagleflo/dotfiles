@@ -94,6 +94,7 @@
    cider
    clojure-mode
    coffee-mode
+   company
    dash-at-point
    epc
    evil
