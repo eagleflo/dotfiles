@@ -265,6 +265,35 @@
 
 (global-set-key (kbd "M-j") 'join-line)
 
+(require 'cc-mode)
+(define-key c-mode-base-map (kbd "C-c o") 'ff-find-other-file)
+
+;; Objective-C & Objective-C++
+(add-to-list 'auto-mode-alist '("\\.mm\\'" . objc-mode))
+
+(require 'find-file) ;; for the "cc-other-file-alist" variable
+(nconc (cadr (assoc "\\.h\\'" cc-other-file-alist)) '(".m" ".mm"))
+(add-to-list 'cc-other-file-alist '("\\.m\\'" (".h")))
+(add-to-list 'cc-other-file-alist '("\\.mm\\'" (".h")))
+
+(defadvice ff-get-file-name (around ff-get-file-name-framework
+                                    (search-dirs
+                                     fname-stub
+                                     &optional suffix-list))
+  "Search for Mac framework headers as well as POSIX headers."
+  (or
+   (if (string-match "\\(.*?\\)/\\(.*\\)" fname-stub)
+       (let* ((framework (match-string 1 fname-stub))
+              (header (match-string 2 fname-stub))
+              (fname-stub (concat framework ".framework/Headers/" header)))
+         ad-do-it))
+   ad-do-it))
+(ad-enable-advice 'ff-get-file-name 'around 'ff-get-file-name-framework)
+(ad-activate 'ff-get-file-name)
+
+(setq cc-search-directories '("." "../include" "/usr/include" "/usr/local/include/*"
+                              "/System/Library/Frameworks" "/Library/Frameworks"))
+
 ;; Show full pathname in title bar
 (setq frame-title-format
       '((:eval (if (buffer-file-name)
