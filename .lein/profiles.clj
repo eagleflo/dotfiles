@@ -1,5 +1,4 @@
-{:user {:plugins [[lein-ring "0.8.11"]
-                  [lein-midje "3.1.3"]
+{:user {:plugins [[lein-ring "0.8.12"]
                   [lein-ancient "0.5.5"]
                   [lein-cloverage "1.0.2"]
                   [lein-droid "0.2.3"]
