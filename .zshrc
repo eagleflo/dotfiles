@@ -114,6 +114,10 @@ if [[ $OSTYPE == darwin* ]]; then
     export BOOST_ROOT=$(brew --prefix boost)
 fi
 
+# Cornerstone
+export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.0.6
+export PATH=$PATH:$CORNERSTONE_SDK_ROOT/bin
+
 # Arch
 if [[ $OSTYPE == darwin* ]]; then
     export ARCHFLAGS="-arch x86_64"
