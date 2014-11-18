@@ -109,6 +109,11 @@ fi
 # Unalias gm (GraphicsMagick, not git merge)
 unalias gm
 
+# Boost
+if [[ $OSTYPE == darwin* ]]; then
+    export BOOST_ROOT=$(brew --prefix boost)
+fi
+
 # Arch
 if [[ $OSTYPE == darwin* ]]; then
     export ARCHFLAGS="-arch x86_64"
