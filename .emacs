@@ -44,10 +44,8 @@
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq-default tab-stop-list (number-sequence 2 200 2))
-(setq-default js2-basic-offset 2)
 (setq-default js-indent-level 2)
 (setq-default css-indent-offset 2)
-(setq-default coffee-tab-width 2)
 (setq-default py-indent-offset 4)
 
 ;; Require newlines at the end of file
