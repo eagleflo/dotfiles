@@ -147,14 +147,6 @@
 (add-hook 'scheme-mode-hook           'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          'enable-paredit-mode)
 
-;; Clojure
-(add-hook 'cider-repl-mode-hook 'subword-mode)
-(add-hook 'cider-repl-mode-hook 'paredit-mode)
-(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
-
-;; ClojureScript
-(setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
-
 ;; Company
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
@@ -210,6 +202,25 @@
 (projectile-global-mode)
 (setq projectile-enable-caching t)
 
+;; Clojure
+(add-hook 'cider-repl-mode-hook 'subword-mode)
+(add-hook 'cider-repl-mode-hook 'paredit-mode)
+(add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+
+;; ClojureScript
+(setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
+
+;; JavaScript
+(require 'flycheck)
+(add-hook 'js-mode-hook
+          (lambda () (flycheck-mode t)))
+
+;; Python
+(autoload 'jedi:setup "jedi" nil t)
+(add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)
+(setq jedi:complete-on-dot t)
+
 ;; SBCL
 (setq inferior-lisp-program "sbcl")
 
@@ -220,12 +231,6 @@
 ;; Racket
 (if (eq system-type 'darwin)
     (setq geiser-racket-binary "/Applications/Racket v6.1/bin/racket"))
-
-;; Python
-(autoload 'jedi:setup "jedi" nil t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
 
 ;; tagedit
 (eval-after-load "sgml-mode"
