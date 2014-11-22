@@ -115,6 +115,8 @@
    nginx-mode
    paredit
    projectile
+   purescript-mode
+   racket-mode
    rainbow-delimiters
    rust-mode
    slime
