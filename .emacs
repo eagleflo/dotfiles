@@ -336,14 +336,6 @@
 (global-set-key (kbd "<mouse-6>") 'scroll-right)
 (global-set-key (kbd "<mouse-7>") 'scroll-left)
 
-;; Smoother scrolling
-(setq mouse-wheel-scroll-amount '(0.01))
-(setq redisplay-dont-pause t
-      scroll-margin 1
-      scroll-step 1
-      scroll-conservatively 10000
-      scroll-preserve-screen-position 1)
-
 ;; Calendar
 (add-hook 'calendar-load-hook (lambda () (calendar-set-date-style 'european)))
 (setq calendar-week-start-day 1)
