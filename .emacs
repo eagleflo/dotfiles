@@ -12,23 +12,17 @@
 (if (fboundp 'tool-bar-mode) (tool-bar-mode 0))
 (if (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
 
-;; No splash screen
+;; No splash screen, no audible or visible bell, no blinking cursor
 (setq inhibit-splash-screen t)
-
-;; No audible or visible bell
 (setq ring-bell-function 'ignore)
+(blink-cursor-mode 0)
 
-;; Show column number in mode line
-(column-number-mode)
-
-;; Show file size in mode
+;; Show file size & column number in mode line
 (size-indication-mode)
+(column-number-mode)
 
 ;; Highlight matching parenthesis
 (show-paren-mode)
-
-;; No blinking cursor
-(blink-cursor-mode 0)
 
 ;; Read changes immediately from disk
 (global-auto-revert-mode)
