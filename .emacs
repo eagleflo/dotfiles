@@ -354,6 +354,9 @@
 (setq org-agenda-files (list "~/TODO.org"
                              "~/reaktor/work.org"))
 
+;; Eshell
+(add-hook 'eshell-mode-hook (lambda () (set show-trailing-whitespace nil)))
+
 ;; ERC
 (setq erc-timestamp-only-if-changed-flag nil
       erc-timestamp-format "%H:%M "
