@@ -98,6 +98,8 @@
    flx-ido
    geiser
    ggtags
+   gitconfig-mode
+   gitignore-mode
    haskell-mode
    helm
    helm-ag
