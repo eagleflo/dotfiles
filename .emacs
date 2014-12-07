@@ -80,16 +80,7 @@
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
 
-(unless package-archive-contents
-  (package-refresh-contents))
-
-(defun packages-install (packages)
-  (dolist (p packages)
-    (when (not (package-installed-p p))
-      (package-install p)))
-  (delete-other-windows))
-
-(packages-install
+(defvar my-packages
  '(ac-slime
    ag
    auto-complete
@@ -129,6 +120,22 @@
    tern-auto-complete
    web-mode
    wrap-region))
+
+(defun my-packages-installed-p ()
+  (every #'package-installed-p my-packages))
+
+(defun install-package (package)
+  (unless (package-installed-p package)
+    (package-install package)))
+
+(defun install-packages ()
+  (unless (my-packages-installed-p)
+    (message "%s" "Refreshing package database")
+    (package-refresh-contents)
+    (message "%s" "Done.")
+    (mapc #'install-package my-packages)))
+
+(install-packages)
 
 ;; Color scheme
 (if (window-system)
