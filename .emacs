@@ -62,6 +62,13 @@
 ;; We are civilized people here
 (setq sentence-end-double-space nil)
 
+;; Size, position and font in windowed mode
+(if (window-system)
+    (progn (set-frame-height (selected-frame) 45)
+           (set-frame-width (selected-frame) 110)
+           (set-frame-position (selected-frame) 0 0)
+           ;(set-face-attribute 'default nil :family "Inconsolata")
+           (set-face-attribute 'default nil :height 140)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Part 3 - Packaging ;;
@@ -305,13 +312,6 @@
 ;; Follow symbolic links to version controlled files... Helm find-file
 ;; seems to want this ever since I dropped .emacs under Git.
 (setq-default vc-follow-symlinks t)
-
-;; Size, position and font in windowed mode
-(if (window-system)
-  (progn (set-frame-height (selected-frame) 42)
-         (set-frame-position (selected-frame) 0 0)
-         ;(set-face-attribute 'default nil :family "Inconsolata")
-         (set-face-attribute 'default nil :height 140)))
 
 ;; Left alt is meta, right alt remains as alt in windowed mode
 (if (window-system)
