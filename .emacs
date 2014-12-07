@@ -74,6 +74,8 @@
 ;;; Part 3 - Packaging ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(require 'cl) ;; For every and case
+
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/") t)
 (package-initialize)
@@ -156,9 +158,6 @@
 ;; Use mdfind for locate on OS X
 (if (eq system-type 'darwin)
     (setq locate-command "mdfind"))
-
-;; Require Common Lisp for Emacs for case
-(require 'cl)
 
 ;; Helm
 (require 'helm-config)
