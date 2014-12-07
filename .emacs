@@ -255,6 +255,9 @@
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 
+(if (eq system-type 'darwin)
+    (global-set-key "\C-cd" 'dash-at-point))
+
 ;; Autocomplete
 ;; (require 'auto-complete-config)
 ;; (add-to-list 'ac-dictionary-directories "~/emacs.d/dict")
