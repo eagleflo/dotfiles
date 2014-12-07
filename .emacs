@@ -43,10 +43,12 @@
 ;; Spaces, not tabs. 2 spaces per tab.
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
-(setq-default tab-stop-list (number-sequence 2 200 2))
+(setq-default c-basic-offset 4)
+(setq-default py-indent-offset 4)
 (setq-default js-indent-level 2)
 (setq-default css-indent-offset 2)
-(setq-default py-indent-offset 4)
+
+(setq-default c-default-style "k&r")
 
 ;; Require newlines at the end of file
 (setq require-final-newline t)
