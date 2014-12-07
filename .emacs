@@ -94,6 +94,7 @@
    evil
    expand-region
    find-file-in-repository
+   flycheck
    flx-ido
    geiser
    ggtags
