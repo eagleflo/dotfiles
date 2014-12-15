@@ -231,6 +231,9 @@
      (tagedit-add-experimental-features)
      (add-hook 'web-mode-hook (lambda () (tagedit-mode 1)))))
 
+;; web-mode
+(add-hook 'web-mode-hook '(setq-default web-mode-code-indent-offset 2))
+
 ;; JavaScript
 (require 'flycheck)
 (add-hook 'js-mode-hook
