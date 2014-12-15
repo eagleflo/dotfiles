@@ -220,6 +220,17 @@
 ;; ClojureScript
 (setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
 
+;; HTML
+(add-to-list 'auto-mode-alist '("\\.html?\\'" . web-mode))
+
+;; tagedit
+(eval-after-load "sgml-mode"
+  '(progn
+     (require 'tagedit)
+     (tagedit-add-paredit-like-keybindings)
+     (tagedit-add-experimental-features)
+     (add-hook 'web-mode-hook (lambda () (tagedit-mode 1)))))
+
 ;; JavaScript
 (require 'flycheck)
 (add-hook 'js-mode-hook
@@ -263,14 +274,6 @@
 ;; Racket
 (if (eq system-type 'darwin)
     (setq geiser-racket-binary "/Applications/Racket v6.1/bin/racket"))
-
-;; tagedit
-(eval-after-load "sgml-mode"
-  '(progn
-     (require 'tagedit)
-     (tagedit-add-paredit-like-keybindings)
-     (tagedit-add-experimental-features)
-     (add-hook 'html-mode-hook (lambda () (tagedit-mode 1)))))
 
 ;; Whitespace
 (require 'whitespace)
