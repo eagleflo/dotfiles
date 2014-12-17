@@ -232,7 +232,12 @@
      (add-hook 'web-mode-hook (lambda () (tagedit-mode 1)))))
 
 ;; web-mode
-(add-hook 'web-mode-hook '(setq-default web-mode-code-indent-offset 2))
+(add-hook 'web-mode-hook
+          (lambda ()
+            (setq web-mode-indent-style 2)
+            (setq web-mode-markup-indent-offset 2)
+            (setq web-mode-css-indent-offset 2)
+            (setq web-mode-code-indent-offset 2)))
 
 ;; JavaScript
 (require 'flycheck)
