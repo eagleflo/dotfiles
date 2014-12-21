@@ -281,7 +281,7 @@
 
 ;; Racket
 (if (eq system-type 'darwin)
-    (setq geiser-racket-binary "/Applications/Racket v6.1/bin/racket"))
+    (setq geiser-racket-binary "/Applications/Racket v6.1.1/bin/racket"))
 
 ;; Whitespace
 (require 'whitespace)
