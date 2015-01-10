@@ -193,6 +193,10 @@
 (define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
 (define-key helm-map (kbd "C-z")   'helm-select-action)
 
+(setq helm-M-x-fuzzy-match        t
+      helm-buffers-fuzzy-matching t
+      helm-recentf-fuzzy-match    t)
+
 ;; helm-gtags
 (custom-set-variables
  '(helm-gtags-suggested-key-mapping t))
