@@ -217,6 +217,12 @@
      (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
      (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)))
 
+;; Popwin
+(require 'popwin)
+(setq display-buffer-function 'popwin:display-buffer)
+(push '("^\*helm .+\*$" :regexp t) popwin:special-display-config)
+(push '("^\*helm-.+\*$" :regexp t) popwin:special-display-config)
+
 ;; Projectile
 (projectile-global-mode)
 (setq projectile-enable-caching t)
