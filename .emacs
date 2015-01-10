@@ -399,7 +399,7 @@
                              "~/reaktor/work.org"))
 
 ;; Eshell
-(add-hook 'eshell-mode-hook (lambda () (set show-trailing-whitespace nil)))
+(add-hook 'eshell-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 
 ;; ERC
 (setq erc-timestamp-only-if-changed-flag nil
