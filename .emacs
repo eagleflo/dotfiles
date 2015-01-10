@@ -40,7 +40,8 @@
 ;; Part 2 - Indentation and whitespace preferences ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Spaces, not tabs. 2 spaces per tab.
+;; Spaces, not tabs. Either two of four spaces per tab, based on each
+;; language's established conventions. (Not eight for C, though.)
 (setq-default indent-tabs-mode nil)
 (setq-default tab-width 4)
 (setq-default c-basic-offset 4)
