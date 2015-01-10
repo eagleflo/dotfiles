@@ -87,6 +87,7 @@
    auto-complete-clang-async
    cider
    clojure-mode
+   cmake-mode
    coffee-mode
    company
    dash-at-point
