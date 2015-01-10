@@ -96,6 +96,7 @@
    expand-region
    find-file-in-repository
    flycheck
+   flycheck-clojure
    flx-ido
    geiser
    ggtags
@@ -217,6 +218,8 @@
 (add-hook 'cider-repl-mode-hook 'subword-mode)
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
+
+(eval-after-load 'flycheck '(flycheck-clojure-setup))
 
 ;; ClojureScript
 (setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
