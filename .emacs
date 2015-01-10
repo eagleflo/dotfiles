@@ -114,6 +114,7 @@
    magit
    nginx-mode
    paredit
+   popwin
    projectile
    purescript-mode
    racket-mode
