@@ -2,6 +2,10 @@
 (setq user-full-name "Aku Kotkavuo"
       user-mail-address "aku.kotkavuo@gmail.com")
 
+;; Packages to investigate:
+;; - emacs-ycmd
+;; - skewer-mode
+;; - irony-mode
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Part 1 - Fixing bad defaults ;;
