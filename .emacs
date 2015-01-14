@@ -263,8 +263,8 @@
 
 ;; JavaScript
 (require 'flycheck)
-(add-hook 'js-mode-hook
-          (lambda () (flycheck-mode t)))
+(add-hook 'js-mode-hook (lambda () (flycheck-mode t)))
+(add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
 ;; JSX
 (add-to-list 'auto-mode-alist '("\\.jsx$" . web-mode))
