@@ -221,8 +221,8 @@
 ;; Popwin
 (require 'popwin)
 (setq display-buffer-function 'popwin:display-buffer)
-(push '("^\*helm .+\*$" :regexp t) popwin:special-display-config)
-(push '("^\*helm-.+\*$" :regexp t) popwin:special-display-config)
+(push '("^\*helm .+\*$" :regexp t :height 20) popwin:special-display-config)
+(push '("^\*helm-.+\*$" :regexp t :height 20) popwin:special-display-config)
 
 ;; Projectile
 (projectile-global-mode)
