@@ -115,7 +115,7 @@ if [[ $OSTYPE == darwin* ]]; then
 fi
 
 # Cornerstone
-export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.0.6
+export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.0.7-beta1
 export PATH=$PATH:$CORNERSTONE_SDK_ROOT/bin
 
 # Arch
