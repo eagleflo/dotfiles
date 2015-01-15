@@ -317,6 +317,8 @@
  (eval-after-load "auto-complete"
    '(add-to-list 'ac-modes 'slime-repl-mode))
 
+(add-hook 'jsx-mode-hook (lambda () (auto-complete-mode 1)))
+
 (eval-after-load 'tern
    '(progn
       (require 'tern-auto-complete)
