@@ -257,6 +257,18 @@
 (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
 (add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
 
+(flycheck-define-checker jsxhint-checker
+  "A JSX syntax and style checker based on JSXHint."
+
+  :command ("jsxhint" source)
+  :error-patterns
+  ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
+  :modes (jsx-mode))
+(add-hook 'jsx-mode-hook
+          (lambda ()
+            (flycheck-select-checker 'jsxhint-checker)
+            (flycheck-mode)))
+
 ;; Python
 (autoload 'jedi:setup "jedi" nil t)
 (add-hook 'python-mode-hook 'jedi:setup)
