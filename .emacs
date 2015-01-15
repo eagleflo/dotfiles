@@ -51,6 +51,7 @@
 (setq-default c-basic-offset 4)
 (setq-default py-indent-offset 4)
 (setq-default js-indent-level 2)
+(setq-default jsx-indent-level 2)
 (setq-default css-indent-offset 2)
 
 (setq-default c-default-style "k&r")
@@ -115,6 +116,7 @@
    helm-ls-git
    helm-projectile
    jedi
+   jsx-mode
    less-css-mode
    magit
    nginx-mode
@@ -249,6 +251,10 @@
 (require 'flycheck)
 (add-hook 'js-mode-hook (lambda () (flycheck-mode t)))
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
+
+;; JSX
+(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
+(autoload 'jsx-mode "jsx-mode" "JSX mode" t)
 
 ;; Python
 (autoload 'jedi:setup "jedi" nil t)
