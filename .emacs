@@ -86,7 +86,8 @@
 (package-initialize)
 
 (defvar my-packages
- '(ac-slime
+ '(ac-cider
+   ac-slime
    ag
    auto-complete
    auto-complete-clang-async
@@ -169,11 +170,6 @@
 (add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          'enable-paredit-mode)
-
-;; Company
-(require 'company)
-(add-hook 'after-init-hook 'global-company-mode)
-(add-to-list 'company-backends 'company-c-headers)
 
 ;; Use mdfind for locate on OS X
 (if (eq system-type 'darwin)
@@ -314,9 +310,32 @@
     (global-set-key "\C-cd" 'dash-at-point))
 
 ;; Autocomplete
-;; (require 'auto-complete-config)
-;; (add-to-list 'ac-dictionary-directories "~/emacs.d/dict")
-;; (ac-config-default)
+(require 'auto-complete-config)
+(add-to-list 'ac-dictionary-directories "~/emacs.d/dict")
+(ac-config-default)
+
+(add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
+(add-hook 'auto-complete-mode-hook 'ac-common-setup)
+(global-auto-complete-mode)
+
+(require 'ac-cider)
+(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
+(add-hook 'cider-mode-hook 'ac-cider-setup)
+(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
+(eval-after-load "auto-complete"
+  '(progn
+     (add-to-list 'ac-modes 'cider-mode)
+     (add-to-list 'ac-modes 'cider-repl-mode)))
+
+ (add-hook 'slime-mode-hook 'set-up-slime-ac)
+ (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
+ (eval-after-load "auto-complete"
+   '(add-to-list 'ac-modes 'slime-repl-mode))
+
+(eval-after-load 'tern
+   '(progn
+      (require 'tern-auto-complete)
+      (tern-ac-setup)))
 
 ;; Clang Complete
 ;; (require 'auto-complete-clang-async)
@@ -325,15 +344,10 @@
 ;;   (setq ac-sources '(ac-source-clang-async))
 ;;   (ac-clang-launch-completion-process))
 
-;; (add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
-;; (add-hook 'auto-complete-mode-hook 'ac-common-setup)
-;; (global-auto-complete-mode)
-
-;; Tern
-;; (eval-after-load 'tern
-;;    '(progn
-;;       (require 'tern-auto-complete)
-;;       (tern-ac-setup)))
+;; Company
+;; (require 'company)
+;; (add-hook 'after-init-hook 'global-company-mode)
+;; (add-to-list 'company-backends 'company-c-headers)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Part 4 - Miscellaneous ;;
