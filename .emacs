@@ -255,6 +255,7 @@
 ;; JSX
 (add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
 (autoload 'jsx-mode "jsx-mode" "JSX mode" t)
+(add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
 
 ;; Python
 (autoload 'jedi:setup "jedi" nil t)
