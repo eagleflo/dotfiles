@@ -91,12 +91,6 @@ if [[ $OSTYPE == darwin* ]]; then
     export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
 fi
 
-# Add GHC 7.8.3 to the PATH, via http://ghcformacosx.github.io/
-export GHC_DOT_APP="/opt/homebrew-cask/Caskroom/ghc/7.8.3-r0/ghc-7.8.3.app"
-if [ -d "$GHC_DOT_APP" ]; then
-    export PATH="${PATH}:${GHC_DOT_APP}/Contents/bin"
-fi
-
 # OCaml & OPAM
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
