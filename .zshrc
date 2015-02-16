@@ -100,6 +100,12 @@ fi
 # OCaml & OPAM
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
+# nvm
+if [[ $OSTYPE == darwin* ]]; then
+    export NVM_DIR=~/.nvm
+    source $(brew --prefix nvm)/nvm.sh
+fi
+
 # Aliases
 if [[ $OSTYPE == darwin* ]]; then
     alias emacs="$(brew --prefix emacs)/Emacs.app/Contents/MacOS/Emacs -nw"
