@@ -71,7 +71,6 @@ fi
 
 export CLASSPATH=.
 export PYTHONSTARTUP=~/.pythonrc
-export GOPATH=~/go/
 
 if [[ $OSTYPE == darwin* ]]; then
     export PGDATA=/usr/local/var/postgres
