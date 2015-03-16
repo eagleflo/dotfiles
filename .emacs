@@ -73,8 +73,8 @@
     (progn (set-frame-height (selected-frame) 45)
            (set-frame-width (selected-frame) 110)
            (set-frame-position (selected-frame) 0 0)
-           ;(set-face-attribute 'default nil :family "Inconsolata")
-           (set-face-attribute 'default nil :height 140)))
+           (set-face-attribute 'default nil :family "Anonymous Pro")
+           (set-face-attribute 'default nil :height 150)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;; Part 3 - Packaging ;;
