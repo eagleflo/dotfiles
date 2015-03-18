@@ -115,7 +115,6 @@
    helm-gtags
    helm-projectile
    jedi
-   jsx-mode
    less-css-mode
    magit
    nginx-mode
@@ -250,22 +249,7 @@
 (add-hook 'js-mode-hook (lambda () (flycheck-mode t)))
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
-;; JSX
-(add-to-list 'auto-mode-alist '("\\.jsx\\'" . jsx-mode))
-(autoload 'jsx-mode "jsx-mode" "JSX mode" t)
-(add-hook 'jsx-mode-hook (lambda () (tern-mode t)))
-
-(flycheck-define-checker jsxhint-checker
-  "A JSX syntax and style checker based on JSXHint."
-
-  :command ("jsxhint" source)
-  :error-patterns
-  ((error line-start (1+ nonl) ": line " line ", col " column ", " (message) line-end))
-  :modes (jsx-mode))
-(add-hook 'jsx-mode-hook
-          (lambda ()
-            (flycheck-select-checker 'jsxhint-checker)
-            (flycheck-mode)))
+(add-to-list 'auto-mode-alist '("\\.jsx$" . js-mode))
 
 ;; Python
 (autoload 'jedi:setup "jedi" nil t)
@@ -314,8 +298,6 @@
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
 (eval-after-load "auto-complete"
   '(add-to-list 'ac-modes 'slime-repl-mode))
-
-(add-hook 'jsx-mode-hook (lambda () (auto-complete-mode 1)))
 
 (eval-after-load 'tern
   '(progn
