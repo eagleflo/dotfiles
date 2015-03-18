@@ -241,8 +241,7 @@
   '(progn
      (require 'tagedit)
      (tagedit-add-paredit-like-keybindings)
-     (tagedit-add-experimental-features)
-     (add-hook 'web-mode-hook (lambda () (tagedit-mode 1)))))
+     (tagedit-add-experimental-features)))
 
 ;; JavaScript
 (require 'flycheck)
