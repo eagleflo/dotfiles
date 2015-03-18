@@ -196,10 +196,6 @@
       helm-buffers-fuzzy-matching t
       helm-recentf-fuzzy-match    t)
 
-;; helm-gtags
-(custom-set-variables
- '(helm-gtags-suggested-key-mapping t))
-
 (require 'helm-gtags)
 (add-hook 'c-mode-hook 'helm-gtags-mode)
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
