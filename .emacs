@@ -388,7 +388,6 @@
 ;; Term & Eshell
 (add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'eshell-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(eval-after-load 'esh-opt  (lambda () (add-to-list 'eshell-visual-commands "tig")))
 
 ;; ERC
 (setq erc-timestamp-only-if-changed-flag nil
