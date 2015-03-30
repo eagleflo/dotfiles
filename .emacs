@@ -356,10 +356,11 @@
 ;; seems to want this ever since I dropped .emacs under Git.
 (setq-default vc-follow-symlinks t)
 
+
 ;; Left alt is meta, right alt remains as alt in windowed mode
 (if (window-system)
-  (setq mac-option-key-is-meta t
-        mac-right-option-modifier nil))
+  (setq mac-option-modifier 'super
+        mac-command-modifier 'meta))
 
 ;; Set super to meta on Linux
 (setq x-super-keysym 'meta)
