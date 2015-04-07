@@ -371,6 +371,11 @@
 (global-set-key (kbd "<mouse-4>") 'previous-line)
 (global-set-key (kbd "<mouse-5>") 'next-line)
 
+;; Scrolling
+(setq scroll-conservatively 1000)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1)))
+;(setq mouse-wheel-progressive-speed nil)
+
 ;; Turn on horizontal scrolling with mouse wheel
 (global-set-key (kbd "<mouse-6>") 'scroll-right)
 (global-set-key (kbd "<mouse-7>") 'scroll-left)
