@@ -56,6 +56,9 @@
 
 (setq-default c-default-style "k&r")
 
+;; No indentation inside namespaces
+(c-set-offset 'innamespace 0)
+
 ;; Require newlines at the end of file
 (setq require-final-newline t)
 
