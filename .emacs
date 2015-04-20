@@ -73,7 +73,7 @@
 
 ;; Size, position and font in windowed mode
 (if (window-system)
-    (progn (set-frame-height (selected-frame) 45)
+    (progn (set-frame-height (selected-frame) 56)
            (set-frame-width (selected-frame) 110)
            (set-frame-position (selected-frame) 0 0)
            (set-face-attribute 'default nil :family "Anonymous Pro")
