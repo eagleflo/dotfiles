@@ -165,6 +165,9 @@
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
+;; Flycheck
+(add-hook 'after-init-hook #'global-flycheck-mode)
+
 ;; Rainbows!
 (require 'rainbow-delimiters)
 (add-hook 'prog-mode-hook 'rainbow-delimiters-mode)
