@@ -186,7 +186,7 @@
 ;; Helm
 (require 'helm-config)
 (require 'helm-ls-git)
-(setq helm-c-locate-command
+(setq helm-locate-command
       (case system-type
         ('gnu/linux "locate -i -r %s")
         ('berkeley-unix "locate -i %s")
