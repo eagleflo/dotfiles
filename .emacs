@@ -108,6 +108,7 @@
    find-file-in-repository
    flycheck
    flycheck-clojure
+   flycheck-rust
    flx-ido
    geiser
    ggtags
@@ -246,11 +247,13 @@
      (tagedit-add-experimental-features)))
 
 ;; JavaScript
-(require 'flycheck)
 (add-hook 'js-mode-hook (lambda () (flycheck-mode t)))
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
 (add-to-list 'auto-mode-alist '("\\.jsx$" . js-mode))
+
+;; Rust
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
 ;; Python
 (autoload 'jedi:setup "jedi" nil t)
