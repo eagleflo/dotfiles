@@ -103,6 +103,7 @@
    dash-at-point
    epc
    evil
+   exec-path-from-shell
    expand-region
    find-file-in-repository
    flycheck
@@ -408,10 +409,8 @@
       erc-insert-timestamp-function 'erc-insert-timestamp-left)
 
 ;; Setting PATH for Emacs.app
-(if (not (getenv "TERM_PROGRAM"))
-  (let ((path (shell-command-to-string "$SHELL -cl \"printf %s \\\"\\\$PATH\\\"\"")))
-       (setenv "PATH" path)
-       (setq exec-path (split-string path ":"))))
+(when (memq window-system '(mac ns))
+  (exec-path-from-shell-initialize))
 
 ;; Japanese
 (set-fontset-font "fontset-default"
