@@ -107,6 +107,7 @@
    find-file-in-repository
    flycheck
    flycheck-clojure
+   flycheck-irony
    flycheck-rust
    flx-ido
    geiser
@@ -325,6 +326,9 @@
     'irony-completion-at-point-async))
 (add-hook 'irony-mode-hook 'my-irony-mode-hook)
 (add-hook 'irony-mode-hook 'irony-cdb-autosetup-compile-options)
+
+(eval-after-load 'flycheck
+  '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 ;; Clang Complete
 ;; (require 'auto-complete-clang-async)
