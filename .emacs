@@ -212,6 +212,7 @@
 (add-hook 'c-mode-hook 'helm-gtags-mode)
 (add-hook 'c++-mode-hook 'helm-gtags-mode)
 (add-hook 'asm-mode-hook 'helm-gtags-mode)
+(add-hook 'js-mode-hook 'helm-gtags-mode)
 
 (eval-after-load "helm-gtags"
   '(progn
