@@ -240,7 +240,7 @@
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
-(eval-after-load 'flycheck '(flycheck-clojure-setup))
+;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
 
 ;; ClojureScript
 (setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
