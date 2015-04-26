@@ -4,4 +4,5 @@
                   [lein-kibit "0.1.2"]
                   [lein-typed "0.3.5"]
                   [jonase/eastwood "0.2.1"]
-                  [cider/cider-nrepl "0.9.0-SNAPSHOT"]]}}
+                  [cider/cider-nrepl "0.9.0-SNAPSHOT"]]
+        :dependencies [[org.clojure/tools.nrepl "0.2.7"]]}}
