@@ -169,6 +169,7 @@
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
 (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++14")))
+(add-hook 'org-mode-hook (lambda () (flycheck-mode -1)))
 
 ;; Rainbows!
 (require 'rainbow-delimiters)
