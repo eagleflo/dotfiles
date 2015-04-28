@@ -4,7 +4,6 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
-	deltaBaseCacheLimit = 1G
 [color]
 	ui = true
 [branch]
