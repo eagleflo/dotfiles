@@ -27,6 +27,9 @@
 ;; Highlight matching parenthesis
 (show-paren-mode)
 
+;; Insert matching parenthesis
+(electric-pair-mode)
+
 ;; Read changes immediately from disk
 (global-auto-revert-mode)
 
