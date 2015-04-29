@@ -163,9 +163,6 @@
     (load-theme 'solarized-light t)
     (load-theme 'solarized-dark t))
 
-;; Solarized is broken with TERM=xterm-256color and has been for *ages*.
-(custom-set-faces (if (not window-system) '(default ((t (:background "nil"))))))
-
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 
