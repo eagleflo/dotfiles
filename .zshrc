@@ -105,6 +105,9 @@ if [[ $OSTYPE == darwin* ]]; then
     source $(brew --prefix nvm)/nvm.sh
 fi
 
+# rbenv
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
 # Aliases
 if [[ $OSTYPE == darwin* ]]; then
     alias emacs="$(brew --prefix emacs)/Emacs.app/Contents/MacOS/Emacs -nw"
