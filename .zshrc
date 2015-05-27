@@ -63,7 +63,6 @@ if [[ $OSTYPE == darwin* ]]; then
 fi
 export PATH=$PATH:~/.cabal/bin
 export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-export PATH=$PATH:~/src/depot_tools
 
 if [[ $OSTYPE == linux* ]]; then
     export PATH=$PATH:~/adt-bundle-linux-x86_64-20140702/sdk/platform-tools
