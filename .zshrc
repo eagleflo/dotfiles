@@ -77,7 +77,6 @@ if [[ $OSTYPE == darwin* ]]; then
     export NODE_PATH=/usr/local/lib/node_modules
     export JAVA_HOME="$(/usr/libexec/java_home)"
     export SCALA_HOME="$(brew --prefix scala)"
-    export GROOVY_HOME="$(brew --prefix groovy)/libexec"
     export ANDROID_HOME=/usr/local/opt/android-sdk
 
     # pkg-config
