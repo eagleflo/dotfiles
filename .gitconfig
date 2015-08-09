@@ -17,3 +17,6 @@
 	smtpserver = smtp.gmail.com
 	smtpserverport = 587
 	smtpuser = aku.kotkavuo@gmail.com
+[filter "media"]
+	clean = git-media-clean %f
+	smudge = git-media-smudge %f
