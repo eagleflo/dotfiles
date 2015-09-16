@@ -56,7 +56,7 @@ export PATH=~/bin:/usr/local/bin:/usr/local/sbin
 if [[ $OSTYPE == darwin* ]]; then
     export PATH=$PATH:/usr/local/share/npm/bin
     export PATH=$PATH:/usr/local/opt/ruby/bin
-    export PATH=$PATH:/usr/texbin
+    export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-darwin
     export PATH=$PATH:"/Applications/Racket v6.1/bin"
     export PATH=$PATH:~/go/bin
     export PATH=$PATH:/usr/local/cuda/bin
