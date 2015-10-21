@@ -125,6 +125,7 @@
    jedi
    less-css-mode
    magit
+   merlin
    nginx-mode
    paredit
    popwin
@@ -277,6 +278,13 @@
 ;; Racket
 (if (eq system-type 'darwin)
     (setq geiser-racket-binary "/Applications/Racket v6.1.1/bin/racket"))
+
+;; OCaml
+(require 'merlin)
+(add-hook 'tuareg-mode-hook 'merlin-mode t)
+(add-hook 'caml-mode-hook 'merlin-mode t)
+(setq merlin-use-auto-complete-mode 'easy)
+(setq merlin-command 'opam)
 
 ;; Whitespace
 (require 'whitespace)
