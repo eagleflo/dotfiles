@@ -94,6 +94,7 @@
    ag
    auto-complete
    auto-complete-clang-async
+   babel-repl
    cider
    clojure-mode
    cmake-mode
@@ -279,6 +280,12 @@
 
 ;; Whitespace
 (require 'whitespace)
+
+;; babel-repl
+(require 'comint)
+(add-to-list 'comint-preoutput-filter-functions
+             (lambda (output)
+               (replace-regexp-in-string "\033\\[[0-9]+[A-Z]" "" output)))
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 
