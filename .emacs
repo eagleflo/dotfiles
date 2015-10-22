@@ -286,6 +286,9 @@
 (setq merlin-use-auto-complete-mode 'easy)
 (setq merlin-command 'opam)
 
+;; Haskell
+(add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
+
 ;; Whitespace
 (require 'whitespace)
 
