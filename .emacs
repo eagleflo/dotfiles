@@ -130,6 +130,7 @@
    paredit
    popwin
    projectile
+   psci
    purescript-mode
    racket-mode
    rainbow-delimiters
@@ -289,6 +290,10 @@
 ;; Haskell
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
 (add-hook 'haskell-mode-hook 'interactive-haskell-mode)
+
+;; PureScript
+(add-hook 'purescript-mode-hook 'turn-on-purescript-indentation)
+(add-hook 'purescript-mode-hook 'inferior-psci-mode)
 
 ;; Whitespace
 (require 'whitespace)
