@@ -7,6 +7,7 @@ histedit =
 mq =
 rebase =
 record =
+hgwatchman = ~/src/hgwatchman
 
 [diff]
 git=true
