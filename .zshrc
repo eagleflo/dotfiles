@@ -66,6 +66,7 @@ export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
 
 if [[ $OSTYPE == linux* ]]; then
     export PATH=$PATH:~/adt-bundle-linux-x86_64-20140702/sdk/platform-tools
+    export PATH=$PATH:~/.npm/bin
     eval `dircolors ~/.dir_colors`
 fi
 
