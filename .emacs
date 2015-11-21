@@ -367,6 +367,8 @@
 ;; (add-hook 'after-init-hook 'global-company-mode)
 ;; (add-to-list 'company-backends 'company-c-headers)
 
+(sql-set-product "postgres")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Part 4 - Miscellaneous ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
