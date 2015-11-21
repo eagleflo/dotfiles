@@ -367,7 +367,11 @@
 ;; (add-hook 'after-init-hook 'global-company-mode)
 ;; (add-to-list 'company-backends 'company-c-headers)
 
+;; SQL
 (sql-set-product "postgres")
+(add-hook 'sql-interactive-mode-hook
+          (lambda ()
+            (toggle-truncate-lines t)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;; Part 4 - Miscellaneous ;;
