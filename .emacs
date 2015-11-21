@@ -61,8 +61,11 @@
 ;; Require newlines at the end of file
 (setq require-final-newline t)
 
-;; Show trailing whitespace
+;; Show trailing whitespace, but not in all modes
 (setq-default show-trailing-whitespace t)
+(add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'eshell-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'sql-interactive-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 
 ;; Highlight tabs
 (setq-default highlight-tabs t)
@@ -453,10 +456,6 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-agenda-files (list "~/TODO.org"
                              "~/reaktor/work.org"))
-
-;; Term & Eshell
-(add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(add-hook 'eshell-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 
 ;; ERC
 (setq erc-timestamp-only-if-changed-flag nil
