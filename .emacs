@@ -371,6 +371,7 @@
 ;; (add-to-list 'company-backends 'company-c-headers)
 
 ;; SQL
+(require 'sql)
 (sql-set-product "postgres")
 (add-hook 'sql-interactive-mode-hook
           (lambda ()
