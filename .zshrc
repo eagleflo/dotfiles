@@ -49,58 +49,15 @@ source $ZSH/oh-my-zsh.sh
 # Locale
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
-export LESSCHARSET='utf-8'
 
-# Path
-export PATH=~/bin:/usr/local/bin:/usr/local/sbin
-if [[ $OSTYPE == darwin* ]]; then
-    export PATH=$PATH:/usr/local/share/npm/bin
-    export PATH=$PATH:/usr/local/opt/ruby/bin
-    export PATH=$PATH:/usr/local/texlive/2015/bin/x86_64-darwin
-    export PATH=$PATH:"/Applications/Racket v6.1/bin"
-    export PATH=$PATH:~/go/bin
-    export PATH=$PATH:/usr/local/cuda/bin
-fi
-export PATH=$PATH:~/.cabal/bin
-export PATH=$PATH:/usr/bin:/bin:/usr/sbin:/sbin:/usr/X11/bin
-
-if [[ $OSTYPE == linux* ]]; then
-    export PATH=$PATH:~/adt-bundle-linux-x86_64-20140702/sdk/platform-tools
-    export PATH=$PATH:~/.npm/bin
-    eval `dircolors ~/.dir_colors`
-fi
-
-export CLASSPATH=.
 export PYTHONSTARTUP=~/.pythonrc
 
-if [[ $OSTYPE == darwin* ]]; then
-    export PGDATA=/usr/local/var/postgres
-    export NODE_PATH=/usr/local/lib/node_modules
-    export JAVA_HOME="$(/usr/libexec/java_home)"
-    export SCALA_HOME="$(brew --prefix scala)"
-    export ANDROID_HOME=/usr/local/opt/android-sdk
-
-    # pkg-config
-    export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig:/usr/X11/lib/pkgconfig
-
-    # Amazon EC2
-    export EC2_PRIVATE_KEY="$(/bin/ls $HOME/.ec2/pk-*.pem)"
-    export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem | /usr/bin/head -1)"
-    export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
-    export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
+if [[ $OSTYPE == linux* ]]; then
+    eval `dircolors ~/.dir_colors`
 fi
 
 # OCaml & OPAM
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
-
-# nvm
-if [[ $OSTYPE == darwin* ]]; then
-    export NVM_DIR=~/.nvm
-    source $(brew --prefix nvm)/nvm.sh
-fi
-
-# rbenv
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 # Aliases
 if [[ $OSTYPE == darwin* ]]; then
@@ -110,17 +67,3 @@ fi
 
 # Unalias gm (GraphicsMagick, not git merge)
 unalias gm
-
-# Boost
-if [[ $OSTYPE == darwin* ]]; then
-    export BOOST_ROOT=$(brew --prefix boost)
-fi
-
-# Cornerstone
-export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.0.7-beta1
-export PATH=$PATH:$CORNERSTONE_SDK_ROOT/bin
-
-# Arch
-if [[ $OSTYPE == darwin* ]]; then
-    export ARCHFLAGS="-arch x86_64"
-fi
