@@ -6,12 +6,15 @@ path=(
     /usr/sbin
     ~/.cabal/bin
     ~/.npm/bin
-    /usr/local/texlive/2015/bin/x86_64-darwin
     /usr/local/cuda/bin
-    "/Applications/Racket v6.2.1/bin"
 )
 
 if [[ $OSTYPE == darwin* ]]; then
+    path+=(
+        /usr/local/texlive/2015/bin/x86_64-darwin
+        "/Applications/Racket v6.2.1/bin"
+    )
+
     export PGDATA=/usr/local/var/postgres
     export NODE_PATH=/usr/local/lib/node_modules
     export JAVA_HOME="$(/usr/libexec/java_home)"
