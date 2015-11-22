@@ -27,6 +27,9 @@ if [[ $OSTYPE == darwin* ]]; then
     export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
 fi
 
+# OCaml & OPAM
+. ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+
 # Cornerstone
 export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.1.0
 path+=$CORNERSTONE_SDK_ROOT/bin
