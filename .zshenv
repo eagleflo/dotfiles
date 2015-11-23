@@ -4,6 +4,7 @@ path=(
     /usr/local/sbin
     /usr/bin
     /usr/sbin
+    /bin
     ~/.cabal/bin
     ~/.npm/bin
     /usr/local/cuda/bin
