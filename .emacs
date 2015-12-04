@@ -166,6 +166,9 @@
     (load-theme 'solarized-light t)
     (load-theme 'solarized-dark t))
 
+;; Evil
+(evil-mode)
+
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
 (setq magit-last-seen-setup-instructions "1.4.0")
