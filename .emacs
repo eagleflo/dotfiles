@@ -203,7 +203,7 @@
         ('windows-nt "es %s")
         ('darwin "mdfind -name %s %s")
         (t "locate %s")))
-(helm-mode 1)
+(helm-mode)
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-d") 'helm-browse-project)
