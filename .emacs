@@ -39,6 +39,7 @@
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 ;; UTF-8 by default
+(set-locale-environment "utf-8")
 (prefer-coding-system 'utf-8)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
