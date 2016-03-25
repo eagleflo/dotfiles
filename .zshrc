@@ -40,7 +40,7 @@ DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(osx brew git github lein node npm bower django pip ruby gem cabal)
+plugins=(osx brew git github lein node npm)
 
 source $ZSH/oh-my-zsh.sh
 
