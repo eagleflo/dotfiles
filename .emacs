@@ -98,11 +98,7 @@
 (package-initialize)
 
 (defvar my-packages
- '(ac-cider
-   ac-slime
-   ag
-   auto-complete
-   auto-complete-clang-async
+ '(ag
    babel-repl
    cider
    clojure-mode
@@ -320,34 +316,6 @@
 (if (eq system-type 'darwin)
     (global-set-key "\C-cd" 'dash-at-point))
 
-;; Autocomplete
-(require 'auto-complete-config)
-(add-to-list 'ac-dictionary-directories "~/emacs.d/dict")
-(ac-config-default)
-
-(add-hook 'c-mode-common-hook 'ac-cc-mode-setup)
-(add-hook 'auto-complete-mode-hook 'ac-common-setup)
-(global-auto-complete-mode)
-
-(require 'ac-cider)
-(add-hook 'cider-mode-hook 'ac-flyspell-workaround)
-(add-hook 'cider-mode-hook 'ac-cider-setup)
-(add-hook 'cider-repl-mode-hook 'ac-cider-setup)
-(eval-after-load "auto-complete"
-  '(progn
-     (add-to-list 'ac-modes 'cider-mode)
-     (add-to-list 'ac-modes 'cider-repl-mode)))
-
-(add-hook 'slime-mode-hook 'set-up-slime-ac)
-(add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
-(eval-after-load "auto-complete"
-  '(add-to-list 'ac-modes 'slime-repl-mode))
-
-(eval-after-load 'tern
-  '(progn
-     (require 'tern-auto-complete)
-     (tern-ac-setup)))
-
 ;; Irony mode
 (add-hook 'c++-mode-hook 'irony-mode)
 (add-hook 'c-mode-hook 'irony-mode)
@@ -365,13 +333,6 @@
 
 (eval-after-load 'flycheck
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
-
-;; Clang Complete
-;; (require 'auto-complete-clang-async)
-;; (defun ac-cc-mode-setup ()
-;;   (setq ac-clang-complete-executable "/usr/local/bin/clang-complete")
-;;   (setq ac-sources '(ac-source-clang-async))
-;;   (ac-clang-launch-completion-process))
 
 ;; Company
 ;; (require 'company)
