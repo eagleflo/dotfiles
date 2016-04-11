@@ -105,6 +105,9 @@
    cmake-mode
    coffee-mode
    company
+   company-c-headers
+   company-irony
+   company-jedi
    dash-at-point
    epc
    evil
@@ -127,7 +130,6 @@
    helm-ls-git
    helm-projectile
    irony
-   jedi
    less-css-mode
    magit
    merlin
@@ -270,12 +272,6 @@
 ;; Rust
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
-;; Python
-(autoload 'jedi:setup "jedi" nil t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
-
 ;; SBCL
 (setq inferior-lisp-program "sbcl")
 
@@ -335,9 +331,14 @@
   '(add-hook 'flycheck-mode-hook #'flycheck-irony-setup))
 
 ;; Company
-;; (require 'company)
-;; (add-hook 'after-init-hook 'global-company-mode)
-;; (add-to-list 'company-backends 'company-c-headers)
+(require 'company)
+(add-hook 'after-init-hook 'global-company-mode)
+(add-to-list 'company-backends 'company-c-headers)
+
+(eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
+
+;; Python
+(add-hook 'python-mode-hook '(add-to-list 'company-backends 'company-jedi))
 
 ;; SQL
 (require 'sql)
