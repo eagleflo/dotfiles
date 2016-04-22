@@ -336,9 +336,8 @@
 (add-to-list 'company-backends 'company-c-headers)
 
 (eval-after-load 'company '(add-to-list 'company-backends 'company-irony))
-
-;; Python
-(add-hook 'python-mode-hook '(add-to-list 'company-backends 'company-jedi))
+(eval-after-load 'company '(add-to-list 'company-backends 'company-irony-c-headers))
+(eval-after-load 'company '(add-to-list 'company-backends 'company-jedi))
 
 ;; SQL
 (require 'sql)
