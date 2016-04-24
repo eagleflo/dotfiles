@@ -147,6 +147,7 @@
    tagedit
    tern
    tern-auto-complete
+   tuareg
    utop
    wrap-region))
 
