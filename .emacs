@@ -147,6 +147,7 @@
    tagedit
    tern
    tern-auto-complete
+   utop
    wrap-region))
 
 (defun my-packages-installed-p ()
@@ -289,6 +290,9 @@
 (add-hook 'caml-mode-hook 'merlin-mode t)
 (setq merlin-use-auto-complete-mode 'easy)
 (setq merlin-command 'opam)
+(setq utop-command "opam config exec -- utop -emacs")
+(autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
+(add-hook 'tuareg-mode-hook 'utop-minor-mode)
 
 ;; Haskell
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
