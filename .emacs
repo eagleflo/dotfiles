@@ -286,6 +286,7 @@
     (setq geiser-racket-binary "/opt/homebrew-cask/Caskroom/racket/6.4/Racket v6.4/bin/racket"))
 
 ;; OCaml
+(setq auto-mode-alist (append '(("\\.ml[ily]?$" . tuareg-mode)) auto-mode-alist))
 (require 'merlin)
 (add-hook 'tuareg-mode-hook 'merlin-mode t)
 (add-hook 'caml-mode-hook 'merlin-mode t)
