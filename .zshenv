@@ -31,6 +31,8 @@ if [[ $OSTYPE == darwin* ]]; then
     export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
 fi
 
+HOMEBREW_NO_ANALYTICS=1
+
 # OCaml & OPAM
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
