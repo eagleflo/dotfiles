@@ -283,7 +283,7 @@
 
 ;; Racket
 (if (eq system-type 'darwin)
-    (setq geiser-racket-binary "/opt/homebrew-cask/Caskroom/racket/6.4/Racket v6.4/bin/racket"))
+    (setq geiser-racket-binary "/Applications/Racket v6.5/bin/racket"))
 
 ;; OCaml
 (setq auto-mode-alist (append '(("\\.ml[ily]?$" . tuareg-mode)) auto-mode-alist))

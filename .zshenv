@@ -13,7 +13,7 @@ path=(
 if [[ $OSTYPE == darwin* ]]; then
     path+=(
         /usr/local/texlive/2015/bin/x86_64-darwin
-        "/Applications/Racket v6.3/bin"
+        "/Applications/Racket v6.5/bin"
     )
 
     export PGDATA=/usr/local/var/postgres
