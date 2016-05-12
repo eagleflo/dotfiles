@@ -130,6 +130,7 @@
    helm-ls-git
    helm-projectile
    irony
+   julia-mode
    less-css-mode
    magit
    merlin
