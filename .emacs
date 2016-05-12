@@ -174,7 +174,7 @@
     (load-theme 'solarized-light t)
     (load-theme 'solarized-dark t))
 
-;; Evil
+(recentf-mode)
 (evil-mode)
 
 ;; Magit
