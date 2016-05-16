@@ -100,6 +100,7 @@
 (defvar my-packages
  '(ag
    babel-repl
+   cargo
    cider
    clojure-mode
    cmake-mode
@@ -108,6 +109,7 @@
    company-c-headers
    company-irony
    company-jedi
+   company-racer
    dash-at-point
    epc
    evil
@@ -140,6 +142,7 @@
    projectile
    psci
    purescript-mode
+   racer
    racket-mode
    rainbow-delimiters
    rust-mode
@@ -274,7 +277,17 @@
 (add-to-list 'auto-mode-alist '("\\.jsx$" . js-mode))
 
 ;; Rust
+(add-hook 'rust-mode-hook 'cargo-minor-mode)
+(add-hook 'rust-mode-hook
+          (lambda ()
+            (local-set-key (kbd "C-c <tab>") #'rust-format-buffer)))
 (add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+
+(setq racer-cmd "~/.cargo/bin/racer")
+
+(add-hook 'rust-mode-hook #'racer-mode)
+(add-hook 'racer-mode-hook #'eldoc-mode)
+(add-hook 'racer-mode-hook #'company-mode)
 
 ;; SBCL
 (setq inferior-lisp-program "sbcl")
