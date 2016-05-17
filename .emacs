@@ -111,6 +111,8 @@
    company-jedi
    company-racer
    dash-at-point
+   docker
+   dockerfile-mode
    epc
    evil
    exec-path-from-shell
