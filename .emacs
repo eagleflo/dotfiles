@@ -217,6 +217,8 @@
         (t "locate %s")))
 (helm-mode)
 
+(setq initial-buffer-choice (helm-recentf))
+
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-d") 'helm-browse-project)
 (global-set-key (kbd "M-x")     'helm-M-x)
