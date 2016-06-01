@@ -264,9 +264,6 @@
 
 ;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
 
-;; ClojureScript
-(setq auto-mode-alist (cons '("\\.cljs" . clojure-mode) auto-mode-alist))
-
 ;; tagedit
 (eval-after-load "sgml-mode"
   '(progn
