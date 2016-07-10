@@ -120,6 +120,7 @@
    dockerfile-mode
    epc
    evil
+   evil-surround
    exec-path-from-shell
    expand-region
    find-file-in-repository
@@ -186,6 +187,7 @@
 
 (recentf-mode)
 (evil-mode)
+(global-evil-surround-mode)
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
