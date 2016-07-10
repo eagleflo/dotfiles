@@ -93,8 +93,6 @@
 ;;; Part 3 - Packaging ;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'cl) ;; For every and case
-
 ;; Silence bogus warnings
 (setq ad-redefinition-action 'accept)
 
@@ -165,7 +163,7 @@
    wrap-region))
 
 (defun my-packages-installed-p ()
-  (every #'package-installed-p my-packages))
+  (cl-every #'package-installed-p my-packages))
 
 (defun install-package (package)
   (unless (package-installed-p package)
@@ -219,7 +217,7 @@
 (require 'helm-config)
 (require 'helm-ls-git)
 (setq helm-locate-command
-      (case system-type
+      (cl-case system-type
         ('gnu/linux "locate -i -r %s")
         ('berkeley-unix "locate -i %s")
         ('windows-nt "es %s")
