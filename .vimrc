@@ -55,6 +55,9 @@ highlight SpecialKey guifg=#4a4a59
 
 if has("gui_running")
     set guioptions-=T
+endif
+
+if has("gui_macvim")
     set guifont=Menlo:h14
 endif
 
