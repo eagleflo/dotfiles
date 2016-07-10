@@ -190,6 +190,7 @@
 (global-evil-surround-mode)
 
 (add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
+(setq evil-emacs-state-cursor 'bar)
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
