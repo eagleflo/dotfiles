@@ -183,7 +183,6 @@
     (load-theme 'solarized-light t)
     (load-theme 'solarized-dark t))
 
-(recentf-mode)
 (evil-mode)
 (global-evil-surround-mode)
 
@@ -224,8 +223,6 @@
         ('darwin "mdfind -name %s %s")
         (t "locate %s")))
 (helm-mode)
-
-(setq initial-buffer-choice (helm-recentf))
 
 (global-set-key (kbd "C-x C-f") 'helm-find-files)
 (global-set-key (kbd "C-x C-d") 'helm-browse-project)
