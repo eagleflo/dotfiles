@@ -187,7 +187,7 @@
 (evil-mode)
 (global-evil-surround-mode)
 
-(add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
+(add-to-list 'evil-emacs-state-modes 'cider-repl-mode 'cider-popup-buffer-mode)
 (setq evil-emacs-state-cursor 'bar)
 
 ;; Magit
