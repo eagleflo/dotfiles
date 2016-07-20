@@ -116,6 +116,7 @@
    dash-at-point
    docker
    dockerfile-mode
+   ensime
    epc
    evil
    evil-surround
