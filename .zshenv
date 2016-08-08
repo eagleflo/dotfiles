@@ -37,5 +37,5 @@ HOMEBREW_NO_ANALYTICS=1
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
 # Cornerstone
-export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.1.0
+export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.1.1
 path+=$CORNERSTONE_SDK_ROOT/bin
