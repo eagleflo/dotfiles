@@ -7,6 +7,7 @@ path=(
     /bin
     ~/.cabal/bin
     ~/.npm/bin
+    ~/go/bin
     /usr/local/cuda/bin
 )
 
@@ -18,6 +19,7 @@ if [[ $OSTYPE == darwin* ]]; then
 
     export PGDATA=/usr/local/var/postgres
     export NODE_PATH=/usr/local/lib/node_modules
+    export GOPATH=~/go
     export JAVA_HOME="$(/usr/libexec/java_home)"
     export SCALA_HOME="$(brew --prefix scala)"
     export ANDROID_HOME=/usr/local/opt/android-sdk
