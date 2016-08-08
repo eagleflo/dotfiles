@@ -110,6 +110,7 @@
    coffee-mode
    company
    company-c-headers
+   company-go
    company-irony
    company-jedi
    company-racer
@@ -132,6 +133,7 @@
    ggtags
    gitconfig-mode
    gitignore-mode
+   go-mode
    haskell-mode
    helm
    helm-ag
