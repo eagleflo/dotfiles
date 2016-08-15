@@ -141,6 +141,7 @@
    helm-ls-git
    helm-projectile
    irony
+   jade
    julia-mode
    less-css-mode
    magit
