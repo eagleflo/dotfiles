@@ -38,6 +38,9 @@ HOMEBREW_NO_ANALYTICS=1
 # OCaml & OPAM
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
+export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-7.5/lib:/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
+export CUDA_HOME="/usr/local/cuda"
+
 # Cornerstone
 export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.1.1
 path+=$CORNERSTONE_SDK_ROOT/bin
