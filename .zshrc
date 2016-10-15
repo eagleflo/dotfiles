@@ -58,7 +58,7 @@ fi
 
 # Aliases
 if [[ $OSTYPE == darwin* ]]; then
-    alias emacs="$(brew --prefix emacs)/Emacs.app/Contents/MacOS/Emacs -nw"
+    alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
     alias vim="$(brew --prefix macvim)/MacVim.app/Contents/MacOS/vim"
 fi
 
