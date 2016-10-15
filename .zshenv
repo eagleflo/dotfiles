@@ -7,6 +7,7 @@ path=(
     /bin
     ~/.cabal/bin
     ~/.npm/bin
+    ~/.cargo/bin
     ~/go/bin
     /usr/local/cuda/bin
 )
