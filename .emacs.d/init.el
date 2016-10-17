@@ -427,10 +427,11 @@
 
 
 ;; Left cmd is meta, left alt is super, right alt remains as alt in windowed mode
-(if (window-system)
+(when (memq window-system '(mac ns))
   (setq mac-option-modifier 'super
         mac-command-modifier 'meta
-        mac-right-option-modifier nil))
+        mac-right-option-modifier nil
+        ns-function-modifier 'hyper))
 
 ;; Set super to meta on Linux
 (setq x-super-keysym 'meta)
