@@ -82,7 +82,7 @@
 (setq sentence-end-double-space nil)
 
 ;; Size, position and font in windowed mode
-(if (window-system)
+(if (display-graphic-p)
     (progn (set-frame-height (selected-frame) 56)
            (set-frame-width (selected-frame) 110)
            (set-frame-position (selected-frame) 0 0)
@@ -184,7 +184,7 @@
 (install-packages)
 
 ;; Color scheme
-(if (window-system)
+(if (display-graphic-p)
     (load-theme 'solarized-light t)
     (load-theme 'solarized-dark t))
 
