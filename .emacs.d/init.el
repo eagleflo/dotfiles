@@ -427,14 +427,15 @@
 
 
 ;; Left cmd is meta, left alt is super, right alt remains as alt in windowed mode
-(when (memq window-system '(mac ns))
+(when (eq window-system 'ns)
   (setq mac-option-modifier 'super
         mac-command-modifier 'meta
         mac-right-option-modifier nil
         ns-function-modifier 'hyper))
 
 ;; Set super to meta on Linux
-(setq x-super-keysym 'meta)
+(when (eq window-system 'x)
+  (setq x-super-keysym 'meta))
 
 ;; Make mouse work in terminal
 (xterm-mouse-mode 1)
@@ -469,7 +470,7 @@
       erc-insert-timestamp-function 'erc-insert-timestamp-left)
 
 ;; Setting PATH for Emacs.app
-(when (memq window-system '(mac ns))
+(when (eq window-system 'ns)
   (exec-path-from-shell-initialize))
 
 ;; Japanese
