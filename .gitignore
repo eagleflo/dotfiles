@@ -6,6 +6,7 @@
 .vim
 .lein/self-installs
 .ssh
+.tern-port
 GPATH
 GRTAGS
 GTAGS
