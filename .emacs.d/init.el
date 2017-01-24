@@ -478,3 +478,7 @@
 (set-fontset-font "fontset-default"
                   'japanese-jisx0208
                   '("Hiragino Kaku Gothic Pro" . "iso10646-1"))
+
+;; Enable font ligatures on mac OS
+(when (eq window-system 'ns)
+  (mac-auto-operator-composition-mode))
