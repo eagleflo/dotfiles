@@ -22,3 +22,7 @@
 	smudge = git-media-smudge %f
 [gpg]
 	program = gpg2
+[submodule]
+	fetchJobs = 4
+[rebase]
+	autostash = true
