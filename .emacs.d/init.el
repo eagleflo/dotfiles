@@ -57,7 +57,6 @@
 (setq-default c-basic-offset 4)
 (setq-default py-indent-offset 4)
 (setq-default js-indent-level 2)
-(setq-default js-switch-indent-offset 2)
 (setq-default jsx-indent-level 2)
 (setq-default css-indent-offset 2)
 
