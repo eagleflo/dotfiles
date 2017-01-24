@@ -156,6 +156,7 @@
    racer
    racket-mode
    rainbow-delimiters
+   rjsx-mode
    rust-mode
    slime
    solarized-theme
@@ -289,6 +290,7 @@
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
 (add-to-list 'auto-mode-alist '("\\.jsx$" . js-mode))
+(add-to-list 'auto-mode-alist '("\\.jsx?$" . js-jsx-mode))
 
 ;; Rust
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
