@@ -1,4 +1,4 @@
-{:user {:plugins [[lein-ring "0.10.0"]
+{:user {:plugins [[lein-ring "0.11.0"]
                   [lein-ancient "0.6.10"]
                   [lein-bikeshed "0.4.1"]
                   [lein-kibit "0.1.3"]
