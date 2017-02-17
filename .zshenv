@@ -10,6 +10,8 @@ path=(
     ~/.cargo/bin
     ~/go/bin
     /usr/local/cuda/bin
+    ~/Library/Android/sdk/tools
+    ~/Library/Android/sdk/platform-tools
 )
 
 if [[ $OSTYPE == darwin* ]]; then
@@ -23,7 +25,7 @@ if [[ $OSTYPE == darwin* ]]; then
     export GOPATH=~/go
     export JAVA_HOME="$(/usr/libexec/java_home)"
     export SCALA_HOME="$(brew --prefix scala)"
-    export ANDROID_HOME=/usr/local/opt/android-sdk
+    export ANDROID_HOME=~/Library/Android/sdk
     export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
     export BOOST_ROOT=$(brew --prefix boost)
 
