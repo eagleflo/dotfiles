@@ -9,13 +9,13 @@ path=(
     ~/.npm/bin
     ~/.cargo/bin
     ~/go/bin
-    /usr/local/cuda/bin
-    ~/Library/Android/sdk/tools
-    ~/Library/Android/sdk/platform-tools
 )
 
 if [[ $OSTYPE == darwin* ]]; then
     path+=(
+        /usr/local/cuda/bin
+        ~/Library/Android/sdk/tools
+        ~/Library/Android/sdk/platform-tools
         /usr/local/texlive/2015/bin/x86_64-darwin
         "/Applications/Racket v6.6/bin"
     )
@@ -34,16 +34,26 @@ if [[ $OSTYPE == darwin* ]]; then
     export EC2_CERT="$(/bin/ls $HOME/.ec2/cert-*.pem | /usr/bin/head -1)"
     export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
     export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
+
+    export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-7.5/lib:/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
+    export CUDA_HOME="/usr/local/cuda"
+
+    HOMEBREW_NO_ANALYTICS=1
+
+    # Cornerstone
+    export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.1.1
+    path+=$CORNERSTONE_SDK_ROOT/bin
+
+elif [[ $OSTYPE == linux* ]]; then
+    path+=(
+        ~/Android/Sdk/tools
+        ~/Android/Sdk/platform-tools
+    )
+    export ANDROID_HOME=~/Android/Sdk
 fi
 
-HOMEBREW_NO_ANALYTICS=1
 
 # OCaml & OPAM
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
 
-export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-7.5/lib:/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
-export CUDA_HOME="/usr/local/cuda"
 
-# Cornerstone
-export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.1.1
-path+=$CORNERSTONE_SDK_ROOT/bin
