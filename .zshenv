@@ -13,6 +13,7 @@ path=(
 
 if [[ $OSTYPE == darwin* ]]; then
     path+=(
+        ~/.fastlane/bin
         /usr/local/cuda/bin
         ~/Library/Android/sdk/tools
         ~/Library/Android/sdk/platform-tools
