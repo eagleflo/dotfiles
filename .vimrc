@@ -28,7 +28,7 @@ set noswapfile
 set encoding=utf-8
 
 syntax enable
-set background=dark
+colorscheme solarized8_dark
 
 set mouse=a
 
