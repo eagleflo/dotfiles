@@ -18,7 +18,7 @@ if [[ $OSTYPE == darwin* ]]; then
         ~/Library/Android/sdk/tools
         ~/Library/Android/sdk/platform-tools
         /usr/local/texlive/2015/bin/x86_64-darwin
-        "/Applications/Racket v6.6/bin"
+        "/Applications/Racket v6.8/bin"
     )
 
     export PGDATA=/usr/local/var/postgres
