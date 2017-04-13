@@ -114,6 +114,8 @@
    company-irony
    company-jedi
    company-racer
+   counsel
+   counsel-projectile
    dash-at-point
    docker
    dockerfile-mode
@@ -135,12 +137,8 @@
    gitignore-mode
    go-mode
    haskell-mode
-   helm
-   helm-ag
-   helm-gtags
-   helm-ls-git
-   helm-projectile
    irony
+   ivy
    jade
    julia-mode
    less-css-mode
@@ -159,6 +157,7 @@
    rust-mode
    slime
    solarized-theme
+   swiper
    tagedit
    tern
    tern-auto-complete
@@ -220,45 +219,26 @@
 (if (eq system-type 'darwin)
     (setq locate-command "mdfind"))
 
-;; Helm
-(require 'helm-config)
-(require 'helm-ls-git)
-(setq helm-locate-command
-      (cl-case system-type
-        ('gnu/linux "locate -i -r %s")
-        ('berkeley-unix "locate -i %s")
-        ('windows-nt "es %s")
-        ('darwin "mdfind -name %s %s")
-        (t "locate %s")))
-(helm-mode)
-
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x C-d") 'helm-browse-project)
-(global-set-key (kbd "M-x")     'helm-M-x)
-(global-set-key (kbd "C-c h")   'helm-mini)
-(define-key helm-map (kbd "<tab>") 'helm-execute-persistent-action)
-(define-key helm-map (kbd "C-z")   'helm-select-action)
-
-(setq helm-M-x-fuzzy-match        t
-      helm-buffers-fuzzy-matching t
-      helm-recentf-fuzzy-match    t)
-
-(require 'helm-gtags)
-(add-hook 'c-mode-hook 'helm-gtags-mode)
-(add-hook 'c++-mode-hook 'helm-gtags-mode)
-(add-hook 'asm-mode-hook 'helm-gtags-mode)
-(add-hook 'js-mode-hook 'helm-gtags-mode)
-
-(eval-after-load "helm-gtags"
-  '(progn
-     (define-key helm-gtags-mode-map (kbd "M-t") 'helm-gtags-find-tag)
-     (define-key helm-gtags-mode-map (kbd "M-r") 'helm-gtags-find-rtag)
-     (define-key helm-gtags-mode-map (kbd "M-s") 'helm-gtags-find-symbol)
-     (define-key helm-gtags-mode-map (kbd "M-g M-p") 'helm-gtags-parse-file)
-     (define-key helm-gtags-mode-map (kbd "C-c <") 'helm-gtags-previous-history)
-     (define-key helm-gtags-mode-map (kbd "C-c >") 'helm-gtags-next-history)
-     (define-key helm-gtags-mode-map (kbd "M-,") 'helm-gtags-pop-stack)
-     (define-key helm-gtags-mode-map (kbd "M-.") 'helm-gtags-dwim)))
+;; Ivy
+(ivy-mode)
+(setq ivy-use-virtual-buffers t)
+(setq enable-recursive-minibuffers t)
+(global-set-key "\C-s" 'swiper)
+(global-set-key (kbd "C-c C-r") 'ivy-resume)
+(global-set-key (kbd "<f6>") 'ivy-resume)
+(global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(global-set-key (kbd "<f1> f") 'counsel-describe-function)
+(global-set-key (kbd "<f1> v") 'counsel-describe-variable)
+(global-set-key (kbd "<f1> l") 'counsel-find-library)
+(global-set-key (kbd "<f2> i") 'counsel-info-lookup-symbol)
+(global-set-key (kbd "<f2> u") 'counsel-unicode-char)
+(global-set-key (kbd "C-c g") 'counsel-git)
+(global-set-key (kbd "C-c j") 'counsel-git-grep)
+(global-set-key (kbd "C-c k") 'counsel-rg)
+(global-set-key (kbd "C-x l") 'counsel-locate)
+(global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
+(define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 
 ;; Popwin
 (require 'popwin)
