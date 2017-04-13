@@ -106,7 +106,6 @@
    cider
    clojure-mode
    cmake-mode
-   coffee-mode
    company
    company-c-headers
    company-go
