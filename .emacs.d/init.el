@@ -101,8 +101,7 @@
 (package-initialize)
 
 (defvar my-packages
- '(ag
-   cargo
+ '(cargo
    cider
    clojure-mode
    cmake-mode
