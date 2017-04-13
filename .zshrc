@@ -56,8 +56,9 @@ if [[ $OSTYPE == linux* ]]; then
     eval `dircolors ~/.dir_colors`
 fi
 
-# Aliases
 if [[ $OSTYPE == darwin* ]]; then
+    test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+    eval $(/usr/libexec/path_helper -s)
     alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
     alias vim="$(brew --prefix macvim)/MacVim.app/Contents/MacOS/vim"
 fi
@@ -65,4 +66,3 @@ fi
 # Unalias gm (GraphicsMagick, not git merge)
 unalias gm
 
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
