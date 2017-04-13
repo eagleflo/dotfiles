@@ -128,7 +128,6 @@
    flycheck-clojure
    flycheck-irony
    flycheck-rust
-   flx-ido
    geiser
    ggtags
    gitconfig-mode
