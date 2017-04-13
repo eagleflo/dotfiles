@@ -255,7 +255,7 @@
 (add-hook 'cider-repl-mode-hook 'paredit-mode)
 (add-hook 'cider-repl-mode-hook 'rainbow-delimiters-mode)
 
-;; (eval-after-load 'flycheck '(flycheck-clojure-setup))
+(eval-after-load 'flycheck '(flycheck-clojure-setup))
 
 ;; tagedit
 (eval-after-load "sgml-mode"
