@@ -237,6 +237,8 @@
 ;; Projectile
 (projectile-global-mode)
 (setq projectile-enable-caching t)
+(counsel-projectile-on)
+(global-set-key (kbd "C-x C-d") 'counsel-projectile-find-file)
 
 ;; Clojure
 (add-hook 'cider-repl-mode-hook 'subword-mode)
