@@ -113,7 +113,6 @@
    company-racer
    counsel
    counsel-projectile
-   dash-at-point
    docker
    dockerfile-mode
    ensime
@@ -307,9 +306,6 @@
 (require 'whitespace)
 
 (global-set-key (kbd "C-=") 'er/expand-region)
-
-(if (eq system-type 'darwin)
-    (global-set-key "\C-cd" 'dash-at-point))
 
 ;; Irony mode
 (add-hook 'c++-mode-hook 'irony-mode)
