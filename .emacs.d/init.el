@@ -117,7 +117,6 @@
    docker
    dockerfile-mode
    ensime
-   epc
    evil
    evil-surround
    exec-path-from-shell
@@ -136,6 +135,7 @@
    irony
    ivy
    jade
+   jedi
    julia-mode
    less-css-mode
    magit
