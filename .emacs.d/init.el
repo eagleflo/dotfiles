@@ -145,7 +145,6 @@
    merlin
    nginx-mode
    paredit
-   popwin
    projectile
    psci
    purescript-mode
@@ -238,12 +237,6 @@
 (global-set-key (kbd "C-x l") 'counsel-locate)
 (global-set-key (kbd "C-S-o") 'counsel-rhythmbox)
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
-
-;; Popwin
-(require 'popwin)
-(setq display-buffer-function 'popwin:display-buffer)
-(push '("^\*helm .+\*$" :regexp t :height 20) popwin:special-display-config)
-(push '("^\*helm-.+\*$" :regexp t :height 20) popwin:special-display-config)
 
 ;; Projectile
 (projectile-global-mode)
