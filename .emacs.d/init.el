@@ -102,7 +102,6 @@
 
 (defvar my-packages
  '(ag
-   babel-repl
    cargo
    cider
    clojure-mode
@@ -316,12 +315,6 @@
 
 ;; Whitespace
 (require 'whitespace)
-
-;; babel-repl
-(require 'comint)
-(add-to-list 'comint-preoutput-filter-functions
-             (lambda (output)
-               (replace-regexp-in-string "\033\\[[0-9]+[A-Z]" "" output)))
 
 (global-set-key (kbd "C-=") 'er/expand-region)
 
