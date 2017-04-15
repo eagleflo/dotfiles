@@ -208,6 +208,7 @@
 (add-hook 'emacs-lisp-mode-hook       'enable-paredit-mode)
 (add-hook 'scheme-mode-hook           'enable-paredit-mode)
 (add-hook 'clojure-mode-hook          'enable-paredit-mode)
+(add-hook 'geiser-repl-mode-hook      'enable-paredit-mode)
 
 ;; Use mdfind for locate on OS X
 (if (eq system-type 'darwin)
