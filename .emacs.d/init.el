@@ -376,8 +376,12 @@
 (ad-enable-advice 'ff-get-file-name 'around 'ff-get-file-name-framework)
 (ad-activate 'ff-get-file-name)
 
-(setq cc-search-directories '("." "../include" "/usr/include" "/usr/local/include/*"
-                              "/System/Library/Frameworks" "/Library/Frameworks"))
+(setq cc-search-directories '("."
+                              "../include"
+                              "/usr/include"
+                              "/usr/local/include/*"
+                              "/System/Library/Frameworks"
+                              "/Library/Frameworks"))
 
 ;; Show full pathname in title bar
 (setq frame-title-format
