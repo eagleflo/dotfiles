@@ -393,7 +393,6 @@
 ;; seems to want this ever since I dropped .emacs under Git.
 (setq-default vc-follow-symlinks t)
 
-
 ;; Left cmd is meta, left alt is super, right alt remains as alt in windowed mode
 (when (eq window-system 'ns)
   (setq mac-option-modifier 'super
