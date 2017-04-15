@@ -154,7 +154,6 @@
    swiper
    tagedit
    tern
-   tern-auto-complete
    terraform-mode
    tide
    tuareg
