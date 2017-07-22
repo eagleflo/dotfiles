@@ -26,3 +26,5 @@
 	fetchJobs = 4
 [rebase]
 	autostash = true
+[pull]
+	rebase = true
