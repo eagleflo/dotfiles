@@ -70,10 +70,10 @@
 
 ;; Show trailing whitespace, but not in all modes
 (setq-default show-trailing-whitespace t)
-(add-hook 'term-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(add-hook 'eshell-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'term-mode-hook            (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'eshell-mode-hook          (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'sql-interactive-mode-hook (lambda () (setq show-trailing-whitespace nil)))
-(add-hook 'cider-repl-mode-hook (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'cider-repl-mode-hook      (lambda () (setq show-trailing-whitespace nil)))
 
 ;; Highlight tabs
 (setq-default highlight-tabs t)
