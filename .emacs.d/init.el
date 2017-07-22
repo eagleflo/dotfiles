@@ -235,7 +235,7 @@
 (define-key read-expression-map (kbd "C-r") 'counsel-expression-history)
 
 ;; Projectile
-(projectile-global-mode)
+(projectile-mode)
 (setq projectile-enable-caching t)
 (counsel-projectile-on)
 (global-set-key (kbd "C-x C-d") 'counsel-projectile-find-file)
