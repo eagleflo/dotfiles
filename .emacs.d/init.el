@@ -133,7 +133,6 @@
    haskell-mode
    irony
    ivy
-   jade
    jedi
    julia-mode
    less-css-mode
