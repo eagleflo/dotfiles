@@ -21,7 +21,7 @@
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [gpg]
-	program = gpg2
+	program = gpg
 [submodule]
 	fetchJobs = 4
 [rebase]
