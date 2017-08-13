@@ -445,5 +445,7 @@
                   '("Hiragino Kaku Gothic Pro" . "iso10646-1"))
 
 ;; Enable font ligatures on mac OS
-(when (eq window-system 'ns)
+(when (eq window-system 'mac)
+  (set-face-attribute 'default nil :family "Fira Code Retina")
+  (set-face-attribute 'default nil :height 140)
   (mac-auto-operator-composition-mode))
