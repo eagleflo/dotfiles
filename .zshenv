@@ -54,6 +54,7 @@ elif [[ $OSTYPE == linux* ]]; then
     export ANDROID_HOME=~/Android/Sdk
 fi
 
+export GPG_TTY=$(tty)
 
 # OCaml & OPAM
 . ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
