@@ -1,6 +1,7 @@
 [user]
 	name = Aku Kotkavuo
 	email = aku.kotkavuo@gmail.com
+	signingkey = E4963242172A95E1
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
@@ -20,8 +21,6 @@
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
-[gpg]
-	program = gpg
 [submodule]
 	fetchJobs = 4
 [rebase]
