@@ -25,7 +25,7 @@ if [[ $OSTYPE == darwin* ]]; then
     export PGDATA=/usr/local/var/postgres
     export NODE_PATH=/usr/local/lib/node_modules
     export GOPATH=~/go
-    export JAVA_HOME="$(/usr/libexec/java_home)"
+    export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
     export SCALA_HOME="$(brew --prefix scala)"
     export ANDROID_HOME=~/Library/Android/sdk
     export PKG_CONFIG_PATH=/usr/local/lib/pkgconfig
