@@ -120,6 +120,7 @@
    dockerfile-mode
    ensime
    evil
+   evil-magit
    evil-surround
    exec-path-from-shell
    expand-region
@@ -194,6 +195,8 @@
 
 ;; Magit
 (global-set-key (kbd "C-x g") 'magit-status)
+
+(require 'evil-magit)
 
 ;; Flycheck
 (add-hook 'after-init-hook #'global-flycheck-mode)
