@@ -190,6 +190,7 @@
 (add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
 (add-to-list 'evil-emacs-state-modes 'cider-popup-buffer-mode)
 (add-to-list 'evil-emacs-state-modes 'cider-stacktrace-mode)
+(add-to-list 'evil-emacs-state-modes 'haskell-interactive-mode)
 (add-to-list 'evil-emacs-state-modes 'term-mode)
 (setq evil-emacs-state-cursor 'bar)
 
