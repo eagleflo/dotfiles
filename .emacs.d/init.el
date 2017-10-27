@@ -293,15 +293,16 @@
     (setq geiser-racket-binary "/Applications/Racket v6.10.1/bin/racket"))
 
 ;; OCaml
-(setq auto-mode-alist (append '(("\\.ml[ily]?$" . tuareg-mode)) auto-mode-alist))
-(require 'merlin)
-(add-hook 'tuareg-mode-hook 'merlin-mode t)
-(add-hook 'caml-mode-hook 'merlin-mode t)
-(setq merlin-use-auto-complete-mode 'easy)
-(setq merlin-command 'opam)
-(setq utop-command "opam config exec -- utop -emacs")
-(autoload 'utop-minor-mode "utop" "Minor mode for utop" t)
-(add-hook 'tuareg-mode-hook 'utop-minor-mode)
+(add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
+(setq auto-mode-alist
+      (append '(("\\.ml[ily]?$" . tuareg-mode)
+                ("\\.topml$" . tuareg-mode))
+              auto-mode-alist))
+(autoload 'utop-setup-ocaml-buffer "utop" "Toplevel for OCaml" t)
+(add-hook 'tuareg-mode-hook 'utop-setup-ocaml-buffer)
+(add-hook 'tuareg-mode-hook 'merlin-mode)
+(setq merlin-use-auto-complete-mode t)
+(setq merlin-error-after-save nil)
 
 ;; Haskell
 (add-hook 'haskell-mode-hook 'turn-on-haskell-indentation)
