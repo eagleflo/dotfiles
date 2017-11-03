@@ -457,5 +457,5 @@
 ;; Enable font ligatures on mac OS
 (when (eq window-system 'mac)
   (set-face-attribute 'default nil :family "Fira Code Retina")
-  (set-face-attribute 'default nil :height 140)
+  (set-face-attribute 'default nil :height 160)
   (mac-auto-operator-composition-mode))
