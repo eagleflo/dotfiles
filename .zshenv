@@ -38,11 +38,6 @@ if [[ $OSTYPE == darwin* ]]; then
     export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
 
     HOMEBREW_NO_ANALYTICS=1
-
-    # Cornerstone
-    export CORNERSTONE_SDK_ROOT=/opt/cornerstone-2.1.1
-    path+=$CORNERSTONE_SDK_ROOT/bin
-
 elif [[ $OSTYPE == linux* ]]; then
     path+=(
         ~/Android/Sdk/tools
