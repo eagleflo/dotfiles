@@ -37,9 +37,6 @@ if [[ $OSTYPE == darwin* ]]; then
     export EC2_HOME="/usr/local/Library/LinkedKegs/ec2-api-tools/jars"
     export EC2_AMITOOL_HOME="/usr/local/Library/LinkedKegs/ec2-ami-tools/jars"
 
-    export DYLD_LIBRARY_PATH="/Developer/NVIDIA/CUDA-7.5/lib:/usr/local/cuda/lib:$DYLD_LIBRARY_PATH"
-    export CUDA_HOME="/usr/local/cuda"
-
     HOMEBREW_NO_ANALYTICS=1
 
     # Cornerstone
