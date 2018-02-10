@@ -244,7 +244,7 @@
 ;; Projectile
 (projectile-mode)
 (setq projectile-enable-caching t)
-(counsel-projectile-on)
+(counsel-projectile-mode)
 (global-set-key (kbd "C-x C-d") 'counsel-projectile-find-file)
 
 ;; Clojure
