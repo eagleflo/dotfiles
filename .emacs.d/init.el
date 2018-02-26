@@ -192,6 +192,7 @@
 (add-to-list 'evil-emacs-state-modes 'cider-stacktrace-mode)
 (add-to-list 'evil-emacs-state-modes 'haskell-interactive-mode)
 (add-to-list 'evil-emacs-state-modes 'term-mode)
+(add-to-list 'evil-emacs-state-modes 'sql-interactive-mode)
 (setq evil-emacs-state-cursor 'bar)
 
 ;; Magit
