@@ -282,6 +282,12 @@
 (add-hook 'racer-mode-hook #'eldoc-mode)
 (add-hook 'racer-mode-hook #'company-mode)
 
+;; Python
+(setq python-shell-interpreter "python3")
+(defvaralias 'flycheck-python-flake8-executable 'python-shell-interpreter)
+(defvaralias 'flycheck-python-pylint-executable 'python-shell-interpreter)
+(defvaralias 'flycheck-python-pycompile-executable 'python-shell-interpreter)
+
 ;; SBCL
 (setq inferior-lisp-program "sbcl")
 
