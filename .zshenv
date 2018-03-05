@@ -48,5 +48,5 @@ fi
 
 export GPG_TTY=$(tty)
 
-# OCaml & OPAM
-. ~/.opam/opam-init/init.sh > /dev/null 2> /dev/null || true
+# OPAM configuration
+. ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
