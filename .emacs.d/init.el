@@ -104,7 +104,8 @@
 (package-initialize)
 
 (defvar my-packages
- '(cargo
+ '(add-node-modules-path
+   cargo
    cider
    clojure-mode
    cmake-mode
@@ -263,6 +264,7 @@
      (tagedit-add-experimental-features)))
 
 ;; JavaScript
+(add-hook 'js-mode-hook #'add-node-modules-path)
 (add-hook 'js-mode-hook (lambda () (flycheck-mode t)))
 (add-hook 'js-mode-hook (lambda () (tern-mode t)))
 
