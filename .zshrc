@@ -64,3 +64,6 @@ fi
 
 # Unalias gm (GraphicsMagick, not git merge)
 unalias gm
+
+# Disable START / STOP
+stty -ixon
