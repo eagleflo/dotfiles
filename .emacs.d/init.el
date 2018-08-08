@@ -146,6 +146,7 @@
    merlin
    nginx-mode
    paredit
+   prettier-js
    projectile
    psci
    purescript-mode
