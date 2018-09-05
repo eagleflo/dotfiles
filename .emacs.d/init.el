@@ -11,9 +11,9 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Turn off menubar, toolbar & scrollbar
-(if (fboundp 'menu-bar-mode) (menu-bar-mode 0))
-(if (fboundp 'tool-bar-mode) (tool-bar-mode 0))
-(if (fboundp 'scroll-bar-mode) (scroll-bar-mode 0))
+(menu-bar-mode 0)
+(tool-bar-mode 0)
+(scroll-bar-mode 0)
 
 ;; No splash screen, no audible or visible bell, no blinking cursor
 (setq inhibit-splash-screen t)
