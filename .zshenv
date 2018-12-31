@@ -16,8 +16,8 @@ if [[ $OSTYPE == darwin* ]]; then
         /usr/local/cuda/bin
         ~/Library/Android/sdk/tools
         ~/Library/Android/sdk/platform-tools
-        /usr/local/texlive/2015/bin/x86_64-darwin
-        "/Applications/Racket v6.12/bin"
+        /usr/local/texlive/2017/bin/x86_64-darwin
+        "/Applications/Racket v7.1/bin"
         /Library/Frameworks/Mono.framework/Versions/Current/bin
     )
 
