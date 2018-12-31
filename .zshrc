@@ -57,8 +57,6 @@ if [[ $OSTYPE == linux* ]]; then
 fi
 
 if [[ $OSTYPE == darwin* ]]; then
-    test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
-    eval $(/usr/libexec/path_helper -s)
     alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 fi
 
