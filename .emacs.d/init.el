@@ -139,7 +139,6 @@
    haskell-mode
    irony
    ivy
-   jedi
    julia-mode
    less-css-mode
    magit
