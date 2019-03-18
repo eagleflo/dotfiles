@@ -448,7 +448,7 @@
 (global-set-key "\C-ca" 'org-agenda)
 (global-set-key "\C-cb" 'org-iswitchb)
 (setq org-agenda-files (list "~/TODO.org"
-                             "~/reaktor/work.org"))
+                             "~/reaktor/Rex.org"))
 
 ;; ERC
 (setq erc-timestamp-only-if-changed-flag nil
