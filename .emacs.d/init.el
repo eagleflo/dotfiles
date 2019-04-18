@@ -78,6 +78,7 @@
 (add-hook 'eshell-mode-hook          (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'sql-interactive-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'cider-repl-mode-hook      (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'inferior-python-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 
 ;; Highlight tabs
 (setq-default highlight-tabs t)
@@ -190,12 +191,13 @@
 (evil-mode)
 (global-evil-surround-mode)
 
+(add-to-list 'evil-emacs-state-modes 'term-mode)
 (add-to-list 'evil-emacs-state-modes 'cider-repl-mode)
 (add-to-list 'evil-emacs-state-modes 'cider-popup-buffer-mode)
 (add-to-list 'evil-emacs-state-modes 'cider-stacktrace-mode)
 (add-to-list 'evil-emacs-state-modes 'haskell-interactive-mode)
-(add-to-list 'evil-emacs-state-modes 'term-mode)
 (add-to-list 'evil-emacs-state-modes 'sql-interactive-mode)
+(add-to-list 'evil-emacs-state-modes 'inferior-python-mode)
 (setq evil-emacs-state-cursor 'bar)
 
 ;; Magit
