@@ -28,7 +28,9 @@ set noswapfile
 set encoding=utf-8
 
 syntax enable
-colorscheme solarized8_dark
+set termguicolors
+set background=dark
+colorscheme solarized8_flat
 
 set mouse=a
 
