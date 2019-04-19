@@ -110,8 +110,6 @@ elif [[ $OSTYPE == linux* ]]; then
         ~/Android/Sdk/platform-tools
     )
     export ANDROID_HOME=~/Android/Sdk
-
-    eval `dircolors ~/.dir_colors`
 fi
 
 # OPAM configuration
