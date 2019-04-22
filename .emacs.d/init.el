@@ -88,8 +88,8 @@
 
 ;; Size, position and font in windowed mode
 (if (display-graphic-p)
-    (progn (set-frame-height (selected-frame) 56)
-           (set-frame-width (selected-frame) 110)
+    (progn (set-frame-height (selected-frame) 55)
+           (set-frame-width (selected-frame) 105)
            (set-frame-position (selected-frame) 0 0)
            (set-face-attribute 'default nil :family "Fira Code")
            (set-face-attribute 'default nil :height 150)))
