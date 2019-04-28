@@ -122,6 +122,7 @@
    counsel-projectile
    docker
    dockerfile-mode
+   elpy
    ensime
    evil
    evil-magit
@@ -291,6 +292,12 @@
 
 ;; Python
 (setq python-shell-interpreter "python3")
+(elpy-enable)
+(setq elpy-rpc-python-command "python3")
+(add-hook 'elpy-mode-hook (lambda () (highlight-indentation-mode -1)))
+(when (load "flycheck" t t)
+  (setq elpy-modules (delq 'elpy-module-flymake elpy-modules))
+  (add-hook 'elpy-mode-hook 'flycheck-mode))
 (defvaralias 'flycheck-python-flake8-executable 'python-shell-interpreter)
 (defvaralias 'flycheck-python-pylint-executable 'python-shell-interpreter)
 (defvaralias 'flycheck-python-pycompile-executable 'python-shell-interpreter)
