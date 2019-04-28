@@ -28,7 +28,11 @@ set noswapfile
 set encoding=utf-8
 
 syntax enable
-set termguicolors
+if has('mac')
+  let g:solarized_use16 = 1
+else
+  set termguicolors
+endif
 set background=dark
 colorscheme solarized8_flat
 
