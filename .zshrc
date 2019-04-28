@@ -66,6 +66,7 @@ path=(
     ~/.cabal/bin
     ~/.cargo/bin
     ~/.npm/bin
+    ~/.gem/ruby/2.6.0/bin
     /usr/local/opt/ruby/bin
     /usr/local/bin
     /usr/local/sbin
