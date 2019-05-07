@@ -107,6 +107,7 @@ if [[ $OSTYPE == darwin* ]]; then
     DOTNET_CLI_TELEMETRY_OPTOUT=1
 elif [[ $OSTYPE == linux* ]]; then
     path+=(
+        ~/.local/bin
         ~/Android/Sdk/tools
         ~/Android/Sdk/platform-tools
     )
