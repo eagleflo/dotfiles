@@ -78,6 +78,7 @@
 (add-hook 'eshell-mode-hook          (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'sql-interactive-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'cider-repl-mode-hook      (lambda () (setq show-trailing-whitespace nil)))
+(add-hook 'slime-repl-mode-hook      (lambda () (setq show-trailing-whitespace nil)))
 (add-hook 'inferior-python-mode-hook (lambda () (setq show-trailing-whitespace nil)))
 
 ;; Highlight tabs
