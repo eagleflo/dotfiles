@@ -312,7 +312,7 @@
 
 ;; Racket
 (if (eq system-type 'darwin)
-    (setq geiser-racket-binary "/Applications/Racket v6.12/bin/racket"))
+    (setq geiser-racket-binary "/Applications/Racket v7.3/bin/racket"))
 
 ;; OCaml
 (add-hook 'tuareg-mode-hook 'tuareg-imenu-set-imenu)
