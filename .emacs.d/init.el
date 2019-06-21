@@ -139,6 +139,7 @@
    ggtags
    gitconfig-mode
    gitignore-mode
+   glsl-mode
    go-mode
    haskell-mode
    irony
