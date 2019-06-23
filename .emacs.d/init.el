@@ -188,6 +188,11 @@
 
 (install-packages)
 
+;; Setting PATH for Emacs.app
+(when (or (eq window-system 'mac)
+          (eq window-system 'ns))
+  (exec-path-from-shell-initialize))
+
 ;; Color scheme
 (if (display-graphic-p)
     (load-theme 'gruvbox-light-medium t)
@@ -469,10 +474,6 @@
       erc-timestamp-format "%H:%M "
       erc-fill-prefix "      "
       erc-insert-timestamp-function 'erc-insert-timestamp-left)
-
-;; Setting PATH for Emacs.app
-(when (eq window-system 'ns)
-  (exec-path-from-shell-initialize))
 
 ;; Japanese
 (set-fontset-font "fontset-default"
