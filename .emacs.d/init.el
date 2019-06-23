@@ -287,17 +287,21 @@
 (add-to-list 'auto-mode-alist '("\\.jsx?$" . js-jsx-mode))
 
 ;; Rust
+(require 'rust-mode)
 (add-hook 'rust-mode-hook 'cargo-minor-mode)
 (add-hook 'rust-mode-hook
           (lambda ()
             (local-set-key (kbd "C-c <tab>") #'rust-format-buffer)))
-(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
 (setq racer-cmd "~/.cargo/bin/racer")
 
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
 (add-hook 'racer-mode-hook #'company-mode)
+(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
+
+(define-key rust-mode-map (kbd "TAB") #'company-indent-or-complete-common)
+(setq company-tooltip-align-annotations t)
 
 ;; Python
 (setq python-shell-interpreter "python3")
