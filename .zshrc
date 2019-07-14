@@ -118,4 +118,6 @@ fi
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 # miniconda
-. /usr/local/miniconda3/etc/profile.d/conda.sh
+if [[ $OSTYPE == darwin* ]]; then
+    . /usr/local/miniconda3/etc/profile.d/conda.sh
+fi
