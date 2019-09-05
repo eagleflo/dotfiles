@@ -482,3 +482,5 @@
   (set-face-attribute 'default nil :family "Fira Code Retina")
   (set-face-attribute 'default nil :height 160)
   (mac-auto-operator-composition-mode))
+
+(setq tramp-default-method "ssh")
