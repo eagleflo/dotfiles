@@ -108,6 +108,7 @@ if [[ $OSTYPE == darwin* ]]; then
 elif [[ $OSTYPE == linux* ]]; then
     path+=(
         ~/.local/bin
+        ~/.node_modules/bin
         ~/Android/Sdk/tools
         ~/Android/Sdk/platform-tools
     )
