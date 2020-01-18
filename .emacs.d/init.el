@@ -141,6 +141,7 @@
    gitignore-mode
    glsl-mode
    go-mode
+   gruvbox-theme
    haskell-mode
    irony
    ivy
@@ -188,7 +189,7 @@
 
 ;; Color scheme
 (if (display-graphic-p)
-    (load-theme 'solarized-light t)
+    (load-theme 'gruvbox-light-medium t)
     (load-theme 'solarized-dark t))
 
 (evil-mode)
