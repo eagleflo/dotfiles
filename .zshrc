@@ -104,7 +104,6 @@ if [[ $OSTYPE == darwin* ]]; then
     alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 
     HOMEBREW_NO_ANALYTICS=1
-    DOTNET_CLI_TELEMETRY_OPTOUT=1
 elif [[ $OSTYPE == linux* ]]; then
     path+=(
         ~/.local/bin
@@ -122,3 +121,5 @@ fi
 if [[ $OSTYPE == darwin* ]]; then
     . /usr/local/miniconda3/etc/profile.d/conda.sh
 fi
+
+DOTNET_CLI_TELEMETRY_OPTOUT=1
