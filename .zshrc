@@ -108,14 +108,12 @@ if [[ $OSTYPE == darwin* ]]; then
     alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 
     HOMEBREW_NO_ANALYTICS=1
+
+    # miniconda
+    . /usr/local/miniconda3/etc/profile.d/conda.sh
 fi
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-# miniconda
-if [[ $OSTYPE == darwin* ]]; then
-    . /usr/local/miniconda3/etc/profile.d/conda.sh
-fi
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
