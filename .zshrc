@@ -67,6 +67,7 @@ path=(
     ~/.cargo/bin
     ~/.npm/bin
     ~/.gem/ruby/2.6.0/bin
+    ~/.dotnet/tools
     /usr/local/opt/ruby/bin
     /usr/local/bin
     /usr/local/sbin
