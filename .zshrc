@@ -88,7 +88,7 @@ if [[ $OSTYPE == darwin* ]]; then
         ~/Library/Android/sdk/tools
         ~/Library/Android/sdk/platform-tools
         ~/.fastlane/bin
-        "/Applications/Racket v7.3/bin"
+        "/Applications/Racket v7.6/bin"
     )
 
     export PGDATA=/usr/local/var/postgres
