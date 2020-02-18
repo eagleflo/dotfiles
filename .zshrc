@@ -75,6 +75,7 @@ path=(
     /usr/sbin
     /bin
     /sbin
+    ~/.emacs.d/bin
     $path
 )
 
