@@ -63,24 +63,26 @@ stty -ixon
 typeset -U path
 path=(
     ~/bin
+    ~/.local/bin
     ~/.cabal/bin
     ~/.cargo/bin
     ~/.npm/bin
+    ~/.node_modules/bin
     ~/.gem/ruby/2.6.0/bin
     ~/.dotnet/tools
-    /usr/local/opt/ruby/bin
+    ~/.emacs.d/bin
     /usr/local/bin
     /usr/local/sbin
     /usr/bin
     /usr/sbin
     /bin
     /sbin
-    ~/.emacs.d/bin
     $path
 )
 
 if [[ $OSTYPE == darwin* ]]; then
     path+=(
+        /usr/local/opt/ruby/bin
         /usr/local/cuda/bin
         /usr/local/texlive/2017/bin/x86_64-darwin
         ~/Library/Android/sdk/tools
@@ -106,14 +108,6 @@ if [[ $OSTYPE == darwin* ]]; then
     alias emacs="/Applications/Emacs.app/Contents/MacOS/Emacs -nw"
 
     HOMEBREW_NO_ANALYTICS=1
-elif [[ $OSTYPE == linux* ]]; then
-    path+=(
-        ~/.local/bin
-        ~/.node_modules/bin
-        ~/Android/Sdk/tools
-        ~/Android/Sdk/platform-tools
-    )
-    export ANDROID_HOME=~/Android/Sdk
 fi
 
 # OPAM configuration
