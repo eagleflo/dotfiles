@@ -78,3 +78,10 @@
                         (frame-parameter nil 'fullscreen))))
 
 (add-hook 'kill-emacs-hook #'save-frame-dimensions)
+
+;; Start org-mode week properly
+(setq calendar-week-start-day 1)
+(setq org-agenda-start-on-weekday 1)
+
+;; Timestamps in English
+(setq system-time-locale "C")
