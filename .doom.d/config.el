@@ -52,7 +52,14 @@
 ;; You can also try 'gd' (or 'C-c g d') to jump to their definition and see how
 ;; they are implemented.
 
-;; Own addition: persist the frame on quit!
+;; Own additions start here.
+
+;; Indent levels
+(setq js-indent-level 2)
+(setq typescript-indent-level 2)
+(setq css-indent-offset 2)
+
+;; Persist the frame on quit!
 (when-let* ((dims (doom-cache-get 'last-frame-size)))
   (cl-destructuring-bind ((left . top) width height fullscreen) dims
     (setq initial-frame-alist
