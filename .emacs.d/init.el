@@ -124,7 +124,6 @@
    docker
    dockerfile-mode
    elpy
-   ensime
    evil
    evil-magit
    evil-surround
