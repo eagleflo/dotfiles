@@ -117,3 +117,4 @@ fi
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
+POWERSHELL_TELEMETRY_OPTOUT=1
