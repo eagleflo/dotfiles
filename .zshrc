@@ -68,9 +68,10 @@ path=(
     ~/.cargo/bin
     ~/.npm/bin
     ~/.node_modules/bin
-    ~/.gem/ruby/2.6.0/bin
     ~/.dotnet/tools
     ~/.emacs.d/bin
+    ~/.gem/ruby/2.7.0/bin
+    /usr/local/opt/ruby/bin
     /usr/local/bin
     /usr/local/sbin
     /usr/bin
@@ -82,8 +83,7 @@ path=(
 
 if [[ $OSTYPE == darwin* ]]; then
     path+=(
-        /usr/local/opt/ruby/bin
-        /usr/local/cuda/bin
+        /usr/local/lib/ruby/gems/2.7.0/bin
         /usr/local/texlive/2017/bin/x86_64-darwin
         ~/Library/Android/sdk/tools
         ~/Library/Android/sdk/platform-tools
