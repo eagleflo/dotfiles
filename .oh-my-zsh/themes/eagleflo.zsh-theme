@@ -4,6 +4,8 @@ if [[ $HOST == eagleflow ]]; then
     PROMPT='%{$fg[cyan]%}[%M]%{$reset_color%}:'$PROMPT
 elif [[ $HOST == mannerheim || $HOST == paasikivi ]]; then
     PROMPT='%{$fg[magenta]%}[%M]%{$reset_color%}:'$PROMPT
+elif [[ $HOST == build3 || $HOST == build4 ]]; then
+    PROMPT='%{$fg[red]%}[%M]%{$reset_color%}:'$PROMPT
 fi
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[red]%}("
