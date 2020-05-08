@@ -59,6 +59,9 @@
 (setq typescript-indent-level 2)
 (setq css-indent-offset 2)
 
+;; Disable pretty-code
+(setq +pretty-code-enabled-modes nil)
+
 ;; ;; Persist the frame on quit!
 ;; (when-let* ((dims (doom-cache-get 'last-frame-size)))
 ;;   (cl-destructuring-bind ((left . top) width height fullscreen) dims
