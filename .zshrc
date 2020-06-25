@@ -68,6 +68,7 @@ path=(
     ~/.cargo/bin
     ~/.npm/bin
     ~/.node_modules/bin
+    ~/.fnm
     ~/.dotnet/tools
     ~/.emacs.d/bin
     ~/.gem/ruby/2.7.0/bin
@@ -115,6 +116,8 @@ fi
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+
+eval "$(fnm env --multi)"
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 POWERSHELL_TELEMETRY_OPTOUT=1
