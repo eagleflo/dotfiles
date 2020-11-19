@@ -117,7 +117,7 @@ fi
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
-eval "$(fnm env --multi)"
+eval "$(fnm env)"
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 POWERSHELL_TELEMETRY_OPTOUT=1
