@@ -11,8 +11,6 @@
 	autosetuprebase = always
 [push]
 	default = simple
-[credential]
-	helper = osxkeychain
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
