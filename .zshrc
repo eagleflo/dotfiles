@@ -68,7 +68,6 @@ path=(
     ~/.cargo/bin
     ~/.npm/bin
     ~/.node_modules/bin
-    ~/.fnm
     ~/.dotnet/tools
     ~/.emacs.d/bin
     ~/.local/share/gem/ruby/3.0.0/bin
@@ -83,11 +82,8 @@ path=(
 
 if [[ $OSTYPE == darwin* ]]; then
     path+=(
-        /usr/local/texlive/2017/bin/x86_64-darwin
         ~/Library/Android/sdk/tools
         ~/Library/Android/sdk/platform-tools
-        ~/.fastlane/bin
-        "/Applications/Racket v7.6/bin"
     )
 
     export PGDATA=/usr/local/var/postgres
@@ -111,8 +107,6 @@ fi
 
 # OPAM configuration
 . ~/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
-
-eval "$(fnm env)"
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 POWERSHELL_TELEMETRY_OPTOUT=1
