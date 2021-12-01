@@ -6,6 +6,7 @@ typeset -U path
 path=(
     $path
     ~/.emacs.d/bin
+    ~/go/bin
 )
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
