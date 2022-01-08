@@ -1,4 +1,3 @@
-source "$HOME/.cargo/env"
 export GPG_TTY=$(tty)
 export CLICOLOR=1
 
@@ -6,6 +5,7 @@ typeset -U path
 path=(
     $path
     ~/.emacs.d/bin
+    ~/.cargo/bin
     ~/go/bin
 )
 
