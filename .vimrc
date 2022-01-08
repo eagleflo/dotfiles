@@ -69,4 +69,3 @@ au BufNewFile,BufRead *.ejs set filetype=html
 au BufNewFile,BufRead *.cljs set filetype=clojure
 au FileType javascript,html,css,less,json setlocal tabstop=2 shiftwidth=2
 
-execute pathogen#infect()
