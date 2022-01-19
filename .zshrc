@@ -7,7 +7,7 @@ precmd() { vcs_info }
 
 autoload -Uz colors && colors
 export CLICOLOR=1
-alias ls='ls --color'
+alias ls='ls --color=auto'
 alias diff='diff --color'
 
 zstyle ':vcs_info:git:*' check-for-changes true
