@@ -18,6 +18,8 @@ setopt PROMPT_SUBST
 PROMPT='%F{green}%~%F{reset}%F{red}${vcs_info_msg_0_}%F{reset} %# '
 
 export HISTFILE="$HOME/.zsh_history"
+export HISTSIZE=100000
+export SAVEHIST=100000
 
 # Disable START / STOP
 stty -ixon
