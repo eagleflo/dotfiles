@@ -23,3 +23,6 @@ export SAVEHIST=100000
 
 # Disable START / STOP
 stty -ixon
+
+# nvm
+source /usr/share/nvm/init-nvm.sh
