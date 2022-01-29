@@ -3,6 +3,7 @@ export CLICOLOR=1
 
 typeset -U path
 path=(
+    ~/.node_modules/bin
     $path
     ~/.emacs.d/bin
     ~/.cargo/bin
