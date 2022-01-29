@@ -7,6 +7,7 @@ precmd() { vcs_info }
 
 autoload -Uz colors && colors
 export CLICOLOR=1
+eval `dircolors`
 alias ls=exa
 alias diff='diff --color'
 
