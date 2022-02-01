@@ -26,4 +26,4 @@ export SAVEHIST=100000
 stty -ixon
 
 # nvm
-source /usr/share/nvm/init-nvm.sh
+[ -d /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
