@@ -8,7 +8,7 @@ precmd() { vcs_info }
 autoload -Uz colors && colors
 export CLICOLOR=1
 type dircolors &> /dev/null && eval `dircolors`
-alias ls=exa
+type exa &> /dev/null && alias ls=exa
 alias diff='diff --color'
 
 zstyle ':vcs_info:git:*' check-for-changes true
