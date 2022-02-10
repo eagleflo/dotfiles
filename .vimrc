@@ -35,6 +35,7 @@ set background=light
 colorscheme solarized8
 
 set mouse=a
+set ttymouse=sgr
 
 " Leader
 let mapleader = ","
