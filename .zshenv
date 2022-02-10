@@ -8,6 +8,7 @@ path=(
     ~/.emacs.d/bin
     ~/.cargo/bin
     ~/go/bin
+    ~/.mozbuild/git-cinnabar
 )
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
