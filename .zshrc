@@ -7,7 +7,7 @@ precmd() { vcs_info }
 
 autoload -Uz colors && colors
 export CLICOLOR=1
-type dircolors &> /dev/null && eval `dircolors`
+type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-light)
 type exa &> /dev/null && alias ls=exa
 alias diff='diff --color'
 
