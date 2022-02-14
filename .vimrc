@@ -32,7 +32,7 @@ if has('termguicolors')
   set termguicolors
 endif
 set background=light
-colorscheme solarized8
+colorscheme gruvbox
 
 set mouse=a
 set ttymouse=sgr
