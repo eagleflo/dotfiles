@@ -25,5 +25,7 @@ export SAVEHIST=100000
 # Disable START / STOP
 stty -ixon
 
+type zoxide &> /dev/null && eval "$(zoxide init zsh)"
+
 # nvm
 # [ -d /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
