@@ -1,0 +1,11 @@
+#!/usr/bin/env zsh
+
+set -euo pipefail
+
+if [ -f "/etc/arch-release" ]; then
+    sudo pacman -Syu
+    yay -Syu
+    flatpak update
+fi
+
+rustup update
