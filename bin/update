@@ -8,4 +8,10 @@ if [ -f "/etc/arch-release" ]; then
     flatpak update
 fi
 
+if [[ "$OSTYPE" == "darwin"* ]]; then
+    brew update
+    brew upgrade
+fi
+
 rustup update
+doom upgrade
