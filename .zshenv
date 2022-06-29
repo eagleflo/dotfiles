@@ -4,13 +4,15 @@ export CLICOLOR=1
 typeset -U path
 path=(
     ~/bin
-    ~/.node_modules/bin
+    ~/.local/bin
     $path
     ~/.emacs.d/bin
     ~/.cargo/bin
     ~/go/bin
     ~/.mozbuild/git-cinnabar
 )
+
+export npm_config_prefix="$HOME/.local"
 
 DOTNET_CLI_TELEMETRY_OPTOUT=1
 POWERSHELL_TELEMETRY_OPTOUT=1
