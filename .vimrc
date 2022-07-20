@@ -27,10 +27,13 @@ set noswapfile
 
 set encoding=utf-8
 
-syntax enable
-if has('termguicolors')
-  set termguicolors
+if !has("gui_running") && &term =~ '^\%(screen\|tmux\)'
+  let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_9b="\<Esc>[48;2;%lu;%lu;%lum"
 endif
+
+syntax enable
+set termguicolors
 set background=light
 colorscheme gruvbox
 
