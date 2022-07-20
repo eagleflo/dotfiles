@@ -1,7 +1,6 @@
 [user]
 	name = Aku Kotkavuo
 	email = aku.kotkavuo@gmail.com
-	signingkey = E4963242172A95E1
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
