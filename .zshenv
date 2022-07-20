@@ -15,6 +15,11 @@ path=(
     /usr/local/lib/ruby/gems/3.1.0/bin
 )
 
+# Android SDK
+export ANDROID_SDK_ROOT=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+export CPPFLAGS="-I/usr/local/opt/openjdk/include"
 
 # Ruby
 export LDFLAGS="-L/usr/local/opt/ruby/lib"
