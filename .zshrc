@@ -1,6 +1,6 @@
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
-complete -C '/usr/bin/aws_completer' aws
+complete -C "$(which aws_completer)" aws
 
 autoload -Uz vcs_info
 precmd() { vcs_info }
