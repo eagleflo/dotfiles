@@ -13,4 +13,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 fi
 
 rustup update
-doom upgrade
+
+if [[ ${1:-""} =~ ^(-d|--doom)$ ]]; then
+    doom upgrade
+fi
