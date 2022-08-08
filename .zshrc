@@ -10,6 +10,16 @@ export CLICOLOR=1
 type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-light)
 type exa &> /dev/null && alias ls=exa
 
+export ALACRITTYCFG="$HOME/.config/alacritty/alacritty.yml"
+
+function light () {
+  sed -i '' -e "s#^colors: \*.*#colors: *gruvbox_light#g" ${ALACRITTYCFG:A}
+}
+
+function dark () {
+  sed -i '' -e "s#^colors: \*.*#colors: *gruvbox_dark#g" ${ALACRITTYCFG:A}
+}
+
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' unstagedstr '!'
 zstyle ':vcs_info:git:*' stagedstr '+'
