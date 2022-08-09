@@ -13,11 +13,19 @@ type exa &> /dev/null && alias ls=exa
 export ALACRITTYCFG="$HOME/.config/alacritty/alacritty.yml"
 
 function light () {
-  sed -i '' -e "s#^colors: \*.*#colors: *gruvbox_light#g" ${ALACRITTYCFG:A}
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    sed -i '' -e "s#^colors: \*.*#colors: *gruvbox_light#g" ${ALACRITTYCFG:A}
+  else
+    sed -i -e "s#^colors: \*.*#colors: *gruvbox_light#g" ${ALACRITTYCFG:A}
+  fi
 }
 
 function dark () {
-  sed -i '' -e "s#^colors: \*.*#colors: *gruvbox_dark#g" ${ALACRITTYCFG:A}
+  if [[ "$OSTYPE" == "darwin"* ]]; then
+    sed -i '' -e "s#^colors: \*.*#colors: *gruvbox_dark#g" ${ALACRITTYCFG:A}
+  else
+    sed -i -e "s#^colors: \*.*#colors: *gruvbox_dark#g" ${ALACRITTYCFG:A}
+  fi
 }
 
 zstyle ':vcs_info:git:*' check-for-changes true
