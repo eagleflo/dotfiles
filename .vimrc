@@ -34,7 +34,6 @@ endif
 
 syntax enable
 set termguicolors
-set background=light
 colorscheme gruvbox
 
 set mouse=a
