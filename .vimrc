@@ -38,7 +38,9 @@ set background=light
 colorscheme gruvbox
 
 set mouse=a
-set ttymouse=sgr
+if !has("nvim")
+  set ttymouse=sgr
+endif
 
 " Leader
 let mapleader = ","
