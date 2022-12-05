@@ -47,6 +47,9 @@ stty -ixon
 
 type zoxide &> /dev/null && eval "$(zoxide init zsh)"
 
+# Use Python 3 as Python unless it exists
+! type python > /dev/null && alias python=python3
+
 # nvm
 # [ -d /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
 # export NVM_DIR="$HOME/.nvm"
