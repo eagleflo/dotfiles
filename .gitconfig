@@ -32,4 +32,4 @@
 	gpgsign = true
 [cinnabar]
 	helper = /home/aku/.mozbuild/git-cinnabar/git-cinnabar-helper
-	version-check = 1644361182
+	version-check = 1680437673
