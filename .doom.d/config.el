@@ -72,5 +72,7 @@
 ;; Timestamps in English
 (setq system-time-locale "C")
 
-;; Temporary workaround for rustic-clippy
-;; (setq rustic-flycheck-clippy-params "--message-format=json")
+;; Use Noto Sans as the default Japanese font (otherwise defaults to Chinese fonts)
+(add-hook! 'doom-load-theme-hook :append
+  (set-fontset-font t 'japanese-jisx0213.2004-1 "Noto Sans CJK JP")
+  (set-fontset-font t 'japanese-jisx0208 "Noto Sans CJK JP"))
