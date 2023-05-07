@@ -72,7 +72,11 @@
 ;; Timestamps in English
 (setq system-time-locale "C")
 
-;; Use Noto Sans as the default Japanese font (otherwise defaults to Chinese fonts)
-(add-hook! 'doom-load-theme-hook :append
-  (set-fontset-font t 'japanese-jisx0213.2004-1 "Noto Sans CJK JP")
-  (set-fontset-font t 'japanese-jisx0208 "Noto Sans CJK JP"))
+;; Configure default Japanese font (otherwise defaults to Chinese fonts)
+(if (eq system-type 'darwin)
+    (add-hook! 'doom-load-theme-hook :append
+      (set-fontset-font t 'japanese-jisx0213.2004-1 "Hiragino Sans")
+      (set-fontset-font t 'japanese-jisx0208 "Hiragino Sans"))
+    (add-hook! 'doom-load-theme-hook :append
+      (set-fontset-font t 'japanese-jisx0213.2004-1 "Noto Sans CJK JP")
+      (set-fontset-font t 'japanese-jisx0208 "Noto Sans CJK JP")))
