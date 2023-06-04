@@ -238,7 +238,7 @@ schemes:
       cyan:    '0x89b482'
       white:   '0xdfbf8e'
 
-colors: *gruvbox_dark
+colors: *gruvbox_light
 
 # Colors (Tomorrow Night)
 #colors:
