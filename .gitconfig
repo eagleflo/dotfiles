@@ -6,6 +6,7 @@
 	excludesfile = ~/.gitignore
 	fsmonitor = true
 	untrackedcache = true
+	quotepath = off
 [color]
 	ui = true
 [branch]
