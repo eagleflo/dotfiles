@@ -8,7 +8,7 @@ precmd() { vcs_info }
 autoload -Uz colors && colors
 export CLICOLOR=1
 type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-light)
-type exa &> /dev/null && alias ls=exa
+type eza &> /dev/null && alias ls=eza
 
 export ALACRITTYCFG="$HOME/.config/alacritty/alacritty.yml"
 
