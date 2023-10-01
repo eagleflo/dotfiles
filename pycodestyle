@@ -1,0 +1,2 @@
+[pycodestyle]
+ignore = D100,D102,D107
