@@ -1,0 +1,2 @@
+[flake8]
+extend-ignore = D100,D102,D107
