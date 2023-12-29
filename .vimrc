@@ -35,6 +35,7 @@ endif
 syntax enable
 set termguicolors
 colorscheme gruvbox
+set background=dark
 
 set mouse=a
 if !has("nvim")
