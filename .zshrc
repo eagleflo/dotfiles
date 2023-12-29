@@ -10,21 +10,21 @@ export CLICOLOR=1
 type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-light)
 type eza &> /dev/null && alias ls=eza
 
-export ALACRITTYCFG="$HOME/.config/alacritty/alacritty.yml"
+export ALACRITTYCFG="$HOME/.config/alacritty/alacritty.toml"
 
 function light () {
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    sed -i '' -e "s#^colors: \*.*#colors: *gruvbox_light#g" ${ALACRITTYCFG:A}
+    sed -i '' -e "s/gruvbox_dark/gruvbox_light/" ${ALACRITTYCFG:A}
   else
-    sed -i -e "s#^colors: \*.*#colors: *gruvbox_light#g" ${ALACRITTYCFG:A}
+    sed -i -e "s/gruvbox_dark/gruvbox_light/" ${ALACRITTYCFG:A}
   fi
 }
 
 function dark () {
   if [[ "$OSTYPE" == "darwin"* ]]; then
-    sed -i '' -e "s#^colors: \*.*#colors: *gruvbox_dark#g" ${ALACRITTYCFG:A}
+    sed -i '' -e "s/gruvbox_light/gruvbox_dark/" ${ALACRITTYCFG:A}
   else
-    sed -i -e "s#^colors: \*.*#colors: *gruvbox_dark#g" ${ALACRITTYCFG:A}
+    sed -i -e "s/gruvbox_light/gruvbox_dark/" ${ALACRITTYCFG:A}
   fi
 }
 
