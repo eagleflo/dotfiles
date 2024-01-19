@@ -9,7 +9,7 @@ if [ -f "/etc/arch-release" ]; then
 fi
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
-    brew update && brew upgrade
+    brew update && brew upgrade && brew cleanup
 fi
 
 rustup update
