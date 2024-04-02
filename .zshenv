@@ -6,6 +6,7 @@ path=(
     ~/bin
     ~/.local/bin
     $path
+    /usr/local/sbin
     ~/.emacs.d/bin
     ~/.cargo/bin
     ~/go/bin
