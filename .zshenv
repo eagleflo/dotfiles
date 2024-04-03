@@ -7,7 +7,7 @@ path=(
     ~/.local/bin
     $path
     /usr/local/sbin
-    ~/.emacs.d/bin
+    ~/.config/emacs/bin
     ~/.cargo/bin
     ~/go/bin
     ~/.local/share/gem/ruby/3.0.0/bin
