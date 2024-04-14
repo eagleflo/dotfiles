@@ -10,26 +10,6 @@ export CLICOLOR=1
 type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-dark)
 type eza &> /dev/null && alias ls=eza
 
-export ALACRITTYCFG="$HOME/.config/alacritty/alacritty.toml"
-
-function light () {
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    sed -i '' -e "s/gruvbox_dark/gruvbox_light/" ${ALACRITTYCFG:A}
-  else
-    sed -i -e "s/gruvbox_dark/gruvbox_light/" ${ALACRITTYCFG:A}
-  fi
-  type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-light)
-}
-
-function dark () {
-  if [[ "$OSTYPE" == "darwin"* ]]; then
-    sed -i '' -e "s/gruvbox_light/gruvbox_dark/" ${ALACRITTYCFG:A}
-  else
-    sed -i -e "s/gruvbox_light/gruvbox_dark/" ${ALACRITTYCFG:A}
-  fi
-  type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-dark)
-}
-
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' unstagedstr '!'
 zstyle ':vcs_info:git:*' stagedstr '+'
