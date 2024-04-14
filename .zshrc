@@ -53,6 +53,9 @@ type zoxide &> /dev/null && eval "$(zoxide init zsh)"
 ! type python > /dev/null && alias python=python3.12
 ! type pip > /dev/null && alias pip=pip3
 
+# fnm
+type fnm &> /dev/null && eval "$(fnm env --use-on-cd)"
+
 # nvm
 # [ -d /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
 # export NVM_DIR="$HOME/.nvm"
