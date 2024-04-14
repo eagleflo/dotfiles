@@ -36,6 +36,9 @@ zstyle ':vcs_info:git:*' stagedstr '+'
 zstyle ':vcs_info:git:*' formats ' (%b%u%c)'
 setopt PROMPT_SUBST
 PROMPT='%F{green}%~%F{reset}%F{red}${vcs_info_msg_0_}%F{reset} %# '
+if [[ $(hostname) == eagleflow ]]; then
+    PROMPT='%F{magenta}[%m]%F{reset} '$PROMPT
+fi
 
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=100000
