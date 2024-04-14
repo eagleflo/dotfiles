@@ -31,6 +31,3 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
-[cinnabar]
-	helper = /home/aku/.mozbuild/git-cinnabar/git-cinnabar-helper
-	version-check = 1685885143
