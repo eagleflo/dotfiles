@@ -7,6 +7,7 @@ path=(
     ~/.local/bin
     $path
     /usr/local/sbin
+    /opt/homebrew/bin
     ~/.config/emacs/bin
     ~/.cargo/bin
     ~/go/bin
