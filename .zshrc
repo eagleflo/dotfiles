@@ -27,9 +27,6 @@ export SAVEHIST=100000
 export LANG=en_US.UTF-8
 export LC_CTYPE=en_US.UTF-8
 
-# Disable START / STOP
-stty -ixon
-
 type zoxide &> /dev/null && eval "$(zoxide init zsh)"
 
 # Use Python 3 as Python unless it exists
@@ -44,3 +41,6 @@ type fnm &> /dev/null && eval "$(fnm env --use-on-cd)"
 # export NVM_DIR="$HOME/.nvm"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
 # [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
+
+# Disable START / STOP
+stty -ixon
