@@ -12,6 +12,7 @@
 	autosetuprebase = always
 [push]
 	default = simple
+	autoSetupRemote = true
 [sendemail]
 	smtpencryption = tls
 	smtpserver = smtp.gmail.com
