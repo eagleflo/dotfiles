@@ -5,6 +5,7 @@ typeset -U path
 path=(
     ~/bin
     ~/.local/bin
+    /opt/homebrew/opt/ruby/bin
     $path
     /usr/local/sbin
     /opt/homebrew/bin
