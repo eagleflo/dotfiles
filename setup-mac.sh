@@ -21,6 +21,6 @@ defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # brew install fd fnm fzf git gpg htop mosh nvim ripgrep tig
 # brew install bat dust eza hyperfine tokei vivid zoxide
-# brew install go python3 ruby rustup
+# brew install go node python3 ruby rustup
 
 # brew install --cask alacritty android-studio rectangle Spotify
