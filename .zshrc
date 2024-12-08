@@ -30,7 +30,7 @@ export LC_CTYPE=en_US.UTF-8
 type zoxide &> /dev/null && eval "$(zoxide init zsh)"
 
 # Use Python 3 as Python unless it exists
-! type python > /dev/null && alias python=python3.12
+! type python > /dev/null && alias python=python3.13
 ! type pip > /dev/null && alias pip=pip3
 
 # fnm
