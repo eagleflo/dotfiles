@@ -4,7 +4,7 @@ set -euo pipefail
 
 if [ -f "/etc/arch-release" ]; then
     sudo pacman -Syu
-    yay -Syu
+    paru -Syu
     flatpak update
 fi
 
