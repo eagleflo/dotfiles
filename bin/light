@@ -6,4 +6,12 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 else
   sed -i -e "s/gruvbox_dark/gruvbox_light/" ${ALACRITTYCFG:A}
 fi
+
+export ZELLIJCFG="$HOME/.config/zellij/config.kdl"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  sed -i '' -e "s/gruvbox-dark/gruvbox-light/" ${ZELLIJCFG:A}
+else
+  sed -i -e "s/gruvbox-dark/gruvbox-light/" ${ZELLIJCFG:A}
+fi
+
 type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-light)
