@@ -13,8 +13,8 @@ path=(
     ~/.config/emacs/bin
     ~/.cargo/bin
     ~/go/bin
-    /opt/homebrew/lib/ruby/gems/3.3.0/bin
-    ~/.local/share/gem/ruby/3.3.0/bin
+    /opt/homebrew/lib/ruby/gems/3.4.0/bin
+    ~/.local/share/gem/ruby/3.4.0/bin
 )
 
 export npm_config_prefix="$HOME/.local"
