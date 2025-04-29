@@ -19,6 +19,9 @@ PROMPT='%F{green}%~%F{reset}%F{red}${vcs_info_msg_0_}%F{reset} %# '
 if [[ $(hostname) == eagleflow ]]; then
     PROMPT='%F{magenta}[%m]%F{reset} '$PROMPT
 fi
+if [[ $(hostname) == arch ]]; then
+    PROMPT='%F{cyan}[%m]%F{reset} '$PROMPT
+fi
 
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=100000
