@@ -41,6 +41,9 @@ type zoxide &> /dev/null && eval "$(zoxide init zsh)"
 # fnm
 type fnm &> /dev/null && eval "$(fnm env --use-on-cd)"
 
+# task
+type go-task &> /dev/null && alias task=go-task
+
 # nvm
 # [ -d /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
 # export NVM_DIR="$HOME/.nvm"
