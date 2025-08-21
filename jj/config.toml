@@ -1,0 +1,8 @@
+[user]
+name = "Aku Kotkavuo"
+email = "aku.kotkavuo@gmail.com"
+
+[[--scope]]
+--when.repositories = ["~/sok"]
+[--scope.user]
+email = "aku.kotkavuo@sok.fi"
