@@ -20,6 +20,11 @@ path=(
 
 export npm_config_prefix="$HOME/.local"
 
+# export NVM_DIR="$HOME/.nvm"
+# [ -s "/opt/homebrew/opt/nvm/nvm.sh" ] && \. "/opt/homebrew/opt/nvm/nvm.sh"
+# [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] &&
+#   \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"
+
 export HOMEBREW_NO_ANALYTICS=1
 export HOMEBREW_NO_ENV_HINTS=1
 export DOTNET_CLI_TELEMETRY_OPTOUT=1

@@ -43,12 +43,6 @@ type go-task &> /dev/null && alias task=go-task
 # fnm
 type fnm &> /dev/null && eval "$(fnm env --use-on-cd)"
 
-# nvm
-# [ -d /usr/share/nvm ] && source /usr/share/nvm/init-nvm.sh
-# export NVM_DIR="$HOME/.nvm"
-# [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
-# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"
-
 # History
 export HISTFILE="$HOME/.zsh_history"
 export HISTSIZE=100000
