@@ -10,6 +10,7 @@ export CLICOLOR=1
 type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-dark)
 type eza &> /dev/null && alias ls=eza
 type z &> /dev/null && alias cd=z
+type bat &> /dev/null && alias cat=bat
 type nvim &> /dev/null && alias vim=nvim
 
 zstyle ':vcs_info:git:*' check-for-changes true
