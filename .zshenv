@@ -1,6 +1,9 @@
 export GPG_TTY=$(tty)
 export CLICOLOR=1
 
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-24.jdk/Contents/Home
+export ANDROID_HOME=$HOME/Library/Android/sdk
+
 typeset -U path
 path=(
     ~/bin
@@ -16,6 +19,8 @@ path=(
     /opt/homebrew/lib/ruby/gems/3.4.0/bin
     ~/.local/share/gem/ruby/3.4.0/bin
     ~/.lmstudio/bin
+    $ANDROID_HOME/emulator
+    $ANDROID_HOME/platform-tools
 )
 
 export npm_config_prefix="$HOME/.local"
