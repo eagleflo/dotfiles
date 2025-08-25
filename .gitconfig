@@ -3,35 +3,35 @@
 	email = aku.kotkavuo@gmail.com
 [core]
 	editor = vim
-	excludesfile = ~/.gitignore
-	untrackedcache = true
-	quotepath = off
+	excludesFile = ~/.gitignore
+	untrackedCache = true
+	quotePath = off
 	pager = delta
 [color]
 	ui = true
 [branch]
-	autosetuprebase = always
+	autoSetupRebase = always
 [push]
 	default = simple
 	autoSetupRemote = true
 [sendemail]
-	smtpencryption = tls
-	smtpserver = smtp.gmail.com
-	smtpserverport = 587
-	smtpuser = aku.kotkavuo@gmail.com
+	smtpEncryption = tls
+	smtpServer = smtp.gmail.com
+	smtpServerport = 587
+	smtpUser = aku.kotkavuo@gmail.com
 [filter "media"]
 	clean = git-media-clean %f
 	smudge = git-media-smudge %f
 [submodule]
 	fetchJobs = 4
 [rebase]
-	autostash = true
+	autoStash = true
 [pull]
 	rebase = true
 [init]
 	defaultBranch = main
 [commit]
-	gpgsign = true
+	gpgSign = true
 [interactive]
 	diffFilter = delta --color-only
 [delta]
