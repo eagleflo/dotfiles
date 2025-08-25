@@ -6,6 +6,7 @@
 	excludesfile = ~/.gitignore
 	untrackedcache = true
 	quotepath = off
+	pager = delta
 [color]
 	ui = true
 [branch]
@@ -31,3 +32,9 @@
 	defaultBranch = main
 [commit]
 	gpgsign = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+[merge]
+	conflictStyle = zdiff3
