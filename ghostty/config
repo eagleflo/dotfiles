@@ -50,4 +50,4 @@ theme = light:GruvboxLightHard,dark:GruvboxDarkHard
 
 cursor-style = block
 cursor-style-blink = false
-shell-integration-features = no-cursor
+shell-integration-features = no-cursor, sudo
