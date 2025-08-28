@@ -43,6 +43,7 @@
 # resize-overlay-duration = 4s 200ms
 
 font-family = Fira Code
+font-family = Hiragino Sans
 font-size = 14
 font-feature = -dlig
 
