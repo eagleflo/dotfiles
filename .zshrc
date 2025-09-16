@@ -41,7 +41,7 @@ type nvim &> /dev/null && alias vim=nvim
 type go-task &> /dev/null && alias task=go-task
 
 # fnm
-type fnm &> /dev/null && eval "$(fnm env --use-on-cd)"
+type fnm &> /dev/null && eval "$(fnm env --use-on-cd --version-file-strategy recursive)"
 
 # History
 export HISTFILE="$HOME/.zsh_history"
