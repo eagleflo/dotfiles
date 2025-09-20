@@ -47,7 +47,7 @@ font-family = Hiragino Sans
 font-size = 14
 font-feature = -dlig
 
-theme = light:GruvboxLightHard,dark:GruvboxDarkHard
+theme = light:"Gruvbox Light Hard",dark:"Gruvbox Dark Hard"
 
 cursor-style = block
 cursor-style-blink = false
