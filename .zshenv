@@ -1,8 +1,13 @@
 export GPG_TTY=$(tty)
 export CLICOLOR=1
 
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-24.jdk/Contents/Home
-export ANDROID_HOME=$HOME/Library/Android/sdk
+if [[ $(uname) == "Linux" ]]; then
+    export JAVA_HOME=/usr/lib/jvm/java-17-openjdk
+    export ANDROID_HOME=$HOME/Android/Sdk
+elif [[ $(uname) == "Darwin" ]]; then
+    export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
+    export ANDROID_HOME=$HOME/Library/Android/sdk
+fi
 
 typeset -U path
 path=(
