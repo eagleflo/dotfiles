@@ -13,10 +13,10 @@ zstyle ':vcs_info:git:*' formats ' (%b%u%c)'
 setopt PROMPT_SUBST
 PROMPT='%F{green}%~%F{reset}%F{red}${vcs_info_msg_0_}%F{reset} %# '
 if [ -n "$SSH_CLIENT" ]; then
-  if [[ $(hostname) == eagleflow ]]; then
+  if [[ $(uname -n) == eagleflow ]]; then
       PROMPT='%F{magenta}[%m]%F{reset} '$PROMPT
   fi
-  if [[ $(hostname) == arch ]]; then
+  if [[ $(uname -n) == arch ]]; then
       PROMPT='%F{cyan}[%m]%F{reset} '$PROMPT
   fi
 fi
