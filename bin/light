@@ -19,4 +19,6 @@ type vivid &> /dev/null && export LS_COLORS=$(vivid generate gruvbox-light)
 if [[ "$XDG_CURRENT_DESKTOP" == "GNOME" ]]; then
   gsettings set org.gnome.desktop.interface gtk-theme "Adwaita"
   gsettings set org.gnome.desktop.interface color-scheme 'prefer-light'
+elif [[ "$XDG_CURRENT_DESKTOP" == "KDE" ]]; then
+  plasma-apply-colorscheme BreezeLight
 fi
