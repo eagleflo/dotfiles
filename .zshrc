@@ -34,7 +34,7 @@ type bat &> /dev/null && alias cat=bat
 type nvim &> /dev/null && alias vim=nvim
 
 # Use Python 3 as Python unless it exists
-! type python > /dev/null && alias python=python3.13
+! type python > /dev/null && alias python=python3
 ! type pip > /dev/null && alias pip=pip3
 
 # task
