@@ -13,13 +13,14 @@ typeset -U path
 path=(
     ~/bin
     ~/.local/bin
+    ~/.cargo/bin
+    /opt/homebrew/opt/rustup/bin
     /opt/homebrew/opt/python/bin
     /opt/homebrew/opt/ruby/bin
     $path
     /usr/local/sbin
     /opt/homebrew/bin
     ~/.config/emacs/bin
-    ~/.cargo/bin
     ~/go/bin
     /opt/homebrew/lib/ruby/gems/3.4.0/bin
     ~/.local/share/gem/ruby/3.4.0/bin
