@@ -13,14 +13,13 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 # Applications
-# brew tap railwaycat/emacsmacport
-# brew install emacs-mac
-
-# brew tap homebrew/cask-fonts
-# brew install --cask font-fira-code
+# brew install font-fira-code
 
 # brew install fd fnm fzf git gpg htop mosh nvim ripgrep tig
 # brew install bat dust eza hyperfine tokei vivid zoxide
 # brew install go node python3 ruby rustup
 
-# brew install --cask alacritty android-studio rectangle Spotify
+# brew install android-studio firefox obsidian rectangle spotify
+
+# brew tap railwaycat/emacsmacport
+# brew install emacs-mac
