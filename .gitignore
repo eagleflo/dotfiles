@@ -11,4 +11,5 @@ GPATH
 GRTAGS
 GTAGS
 .jj
-.claude
+**/.claude
+**/.codex
