@@ -1,3 +1,6 @@
+# Stop if this is not an interactive shell
+[[ -o interactive ]] || return
+
 # Autocomplete
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit && compinit
